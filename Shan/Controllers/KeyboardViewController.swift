@@ -424,6 +424,12 @@ class KeyboardViewController: UIInputViewController {
                                               for: [.touchUpInside, .touchUpOutside, .touchDragOutside, .touchDragExit, .touchCancel])
                         }
                         
+                        if key.type == Key.KeyType.space || key.type == Key.KeyType.return {
+                            keyView.addTarget(self,
+                                              action: #selector(KeyboardViewController.playOtherKeySound(_:)),
+                                              for: .touchDown)
+                        }
+                        
 //                        keyView.addTarget(self, action: #selector(KeyboardViewController.KeySound(_:)), for: .touchDown)
                     }
                 }
@@ -822,27 +828,6 @@ class KeyboardViewController: UIInputViewController {
     //    Press Click - ID: 1104
     //    Press Delete - ID: 1155
     //    Press Modifier - ID: 1156
-    
-    @objc func KeySound(_ sender: KeyboardKey) {
-        if let model = self.layout?.keyForView(sender) {
-            self.playKeySound(model)
-        }
-    }
-    
-    func playKeySound(_ sender: Key) {
-        switch sender.type {
-        case .character, .specialCharacter:
-            AudioServicesPlaySystemSound(1104);
-            break
-        case .backspace:
-            AudioServicesPlaySystemSound(1155);
-            break
-        default:
-            // .shift .modeChange .space .return .keyboardChange
-            AudioServicesPlaySystemSound(1156);
-            break
-        }
-    }
     
     @objc func playCharacterKeySound(_ sender: KeyboardKey) {
         AudioServicesPlaySystemSound(1104);
