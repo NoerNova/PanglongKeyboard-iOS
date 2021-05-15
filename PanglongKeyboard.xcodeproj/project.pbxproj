@@ -17,6 +17,17 @@
 		DD7F2CF1264FC5F40002CD51 /* PanglongKeyboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F2CF0264FC5F40002CD51 /* PanglongKeyboardUITests.swift */; };
 		DD7F2D05264FC7A60002CD51 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F2D04264FC7A60002CD51 /* KeyboardViewController.swift */; };
 		DD7F2D09264FC7A60002CD51 /* Shan.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DD7F2D02264FC7A60002CD51 /* Shan.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DDF7A838264FCBF700676869 /* ForwardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A835264FCBF700676869 /* ForwardingView.swift */; };
+		DDF7A839264FCBF700676869 /* KeyboardInputTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A836264FCBF700676869 /* KeyboardInputTraits.swift */; };
+		DDF7A83A264FCBF700676869 /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A837264FCBF700676869 /* KeyboardLayout.swift */; };
+		DDF7A83E264FCC2200676869 /* DefaultKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A83B264FCC2100676869 /* DefaultKeyboard.swift */; };
+		DDF7A83F264FCC2200676869 /* DirectionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A83C264FCC2100676869 /* DirectionEnum.swift */; };
+		DDF7A840264FCC2200676869 /* KeyboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A83D264FCC2200676869 /* KeyboardModel.swift */; };
+		DDF7A846264FCC2D00676869 /* ImageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A841264FCC2C00676869 /* ImageKey.swift */; };
+		DDF7A847264FCC2D00676869 /* KeyboardConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A842264FCC2C00676869 /* KeyboardConnector.swift */; };
+		DDF7A848264FCC2D00676869 /* KeyboardKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A843264FCC2C00676869 /* KeyboardKey.swift */; };
+		DDF7A849264FCC2D00676869 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A844264FCC2C00676869 /* Shapes.swift */; };
+		DDF7A84A264FCC2D00676869 /* KeyboardKeyBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A845264FCC2D00676869 /* KeyboardKeyBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +86,17 @@
 		DD7F2D02264FC7A60002CD51 /* Shan.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Shan.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD7F2D04264FC7A60002CD51 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		DD7F2D06264FC7A60002CD51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDF7A835264FCBF700676869 /* ForwardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForwardingView.swift; sourceTree = "<group>"; };
+		DDF7A836264FCBF700676869 /* KeyboardInputTraits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardInputTraits.swift; sourceTree = "<group>"; };
+		DDF7A837264FCBF700676869 /* KeyboardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayout.swift; sourceTree = "<group>"; };
+		DDF7A83B264FCC2100676869 /* DefaultKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultKeyboard.swift; sourceTree = "<group>"; };
+		DDF7A83C264FCC2100676869 /* DirectionEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionEnum.swift; sourceTree = "<group>"; };
+		DDF7A83D264FCC2200676869 /* KeyboardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardModel.swift; sourceTree = "<group>"; };
+		DDF7A841264FCC2C00676869 /* ImageKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageKey.swift; sourceTree = "<group>"; };
+		DDF7A842264FCC2C00676869 /* KeyboardConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardConnector.swift; sourceTree = "<group>"; };
+		DDF7A843264FCC2C00676869 /* KeyboardKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardKey.swift; sourceTree = "<group>"; };
+		DDF7A844264FCC2C00676869 /* Shapes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		DDF7A845264FCC2D00676869 /* KeyboardKeyBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardKeyBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,10 +188,53 @@
 		DD7F2D03264FC7A60002CD51 /* Shan */ = {
 			isa = PBXGroup;
 			children = (
-				DD7F2D04264FC7A60002CD51 /* KeyboardViewController.swift */,
-				DD7F2D06264FC7A60002CD51 /* Info.plist */,
+				DDF7A834264FCBDE00676869 /* Views */,
+				DDF7A833264FCBD200676869 /* Supporting Files */,
+				DDF7A832264FCAB000676869 /* Models */,
+				DDF7A831264FCAA800676869 /* Controllers */,
 			);
 			path = Shan;
+			sourceTree = "<group>";
+		};
+		DDF7A831264FCAA800676869 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DDF7A835264FCBF700676869 /* ForwardingView.swift */,
+				DDF7A836264FCBF700676869 /* KeyboardInputTraits.swift */,
+				DDF7A837264FCBF700676869 /* KeyboardLayout.swift */,
+				DD7F2D04264FC7A60002CD51 /* KeyboardViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DDF7A832264FCAB000676869 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DDF7A83B264FCC2100676869 /* DefaultKeyboard.swift */,
+				DDF7A83C264FCC2100676869 /* DirectionEnum.swift */,
+				DDF7A83D264FCC2200676869 /* KeyboardModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DDF7A833264FCBD200676869 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DD7F2D06264FC7A60002CD51 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DDF7A834264FCBDE00676869 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DDF7A841264FCC2C00676869 /* ImageKey.swift */,
+				DDF7A842264FCC2C00676869 /* KeyboardConnector.swift */,
+				DDF7A843264FCC2C00676869 /* KeyboardKey.swift */,
+				DDF7A845264FCC2D00676869 /* KeyboardKeyBackground.swift */,
+				DDF7A844264FCC2C00676869 /* Shapes.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,6 +424,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD7F2D05264FC7A60002CD51 /* KeyboardViewController.swift in Sources */,
+				DDF7A83E264FCC2200676869 /* DefaultKeyboard.swift in Sources */,
+				DDF7A848264FCC2D00676869 /* KeyboardKey.swift in Sources */,
+				DDF7A83F264FCC2200676869 /* DirectionEnum.swift in Sources */,
+				DDF7A847264FCC2D00676869 /* KeyboardConnector.swift in Sources */,
+				DDF7A838264FCBF700676869 /* ForwardingView.swift in Sources */,
+				DDF7A840264FCC2200676869 /* KeyboardModel.swift in Sources */,
+				DDF7A846264FCC2D00676869 /* ImageKey.swift in Sources */,
+				DDF7A84A264FCC2D00676869 /* KeyboardKeyBackground.swift in Sources */,
+				DDF7A849264FCC2D00676869 /* Shapes.swift in Sources */,
+				DDF7A83A264FCBF700676869 /* KeyboardLayout.swift in Sources */,
+				DDF7A839264FCBF700676869 /* KeyboardInputTraits.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,7 +723,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9M4Q67AQA8;
-				INFOPLIST_FILE = Shan/Info.plist;
+				INFOPLIST_FILE = "Shan/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -666,7 +742,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9M4Q67AQA8;
-				INFOPLIST_FILE = Shan/Info.plist;
+				INFOPLIST_FILE = "Shan/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
