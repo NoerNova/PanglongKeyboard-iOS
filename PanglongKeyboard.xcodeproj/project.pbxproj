@@ -15,6 +15,8 @@
 		DD7F2CDB264FC5F40002CD51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD7F2CD9264FC5F40002CD51 /* LaunchScreen.storyboard */; };
 		DD7F2CE6264FC5F40002CD51 /* PanglongKeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F2CE5264FC5F40002CD51 /* PanglongKeyboardTests.swift */; };
 		DD7F2CF1264FC5F40002CD51 /* PanglongKeyboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F2CF0264FC5F40002CD51 /* PanglongKeyboardUITests.swift */; };
+		DD7F2D05264FC7A60002CD51 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F2D04264FC7A60002CD51 /* KeyboardViewController.swift */; };
+		DD7F2D09264FC7A60002CD51 /* Shan.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DD7F2D02264FC7A60002CD51 /* Shan.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +34,28 @@
 			remoteGlobalIDString = DD7F2CCA264FC5F30002CD51;
 			remoteInfo = PanglongKeyboard;
 		};
+		DD7F2D07264FC7A60002CD51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD7F2CC3264FC5F30002CD51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD7F2D01264FC7A60002CD51;
+			remoteInfo = Shan;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DD7F2D0D264FC7A60002CD51 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DD7F2D09264FC7A60002CD51 /* Shan.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DD7F2CCB264FC5F30002CD51 /* PanglongKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanglongKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +72,9 @@
 		DD7F2CEC264FC5F40002CD51 /* PanglongKeyboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PanglongKeyboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD7F2CF0264FC5F40002CD51 /* PanglongKeyboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanglongKeyboardUITests.swift; sourceTree = "<group>"; };
 		DD7F2CF2264FC5F40002CD51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD7F2D02264FC7A60002CD51 /* Shan.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Shan.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD7F2D04264FC7A60002CD51 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		DD7F2D06264FC7A60002CD51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +99,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DD7F2CFF264FC7A60002CD51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,6 +115,7 @@
 				DD7F2CCD264FC5F30002CD51 /* PanglongKeyboard */,
 				DD7F2CE4264FC5F40002CD51 /* PanglongKeyboardTests */,
 				DD7F2CEF264FC5F40002CD51 /* PanglongKeyboardUITests */,
+				DD7F2D03264FC7A60002CD51 /* Shan */,
 				DD7F2CCC264FC5F30002CD51 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +126,7 @@
 				DD7F2CCB264FC5F30002CD51 /* PanglongKeyboard.app */,
 				DD7F2CE1264FC5F40002CD51 /* PanglongKeyboardTests.xctest */,
 				DD7F2CEC264FC5F40002CD51 /* PanglongKeyboardUITests.xctest */,
+				DD7F2D02264FC7A60002CD51 /* Shan.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,6 +163,15 @@
 			path = PanglongKeyboardUITests;
 			sourceTree = "<group>";
 		};
+		DD7F2D03264FC7A60002CD51 /* Shan */ = {
+			isa = PBXGroup;
+			children = (
+				DD7F2D04264FC7A60002CD51 /* KeyboardViewController.swift */,
+				DD7F2D06264FC7A60002CD51 /* Info.plist */,
+			);
+			path = Shan;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,10 +182,12 @@
 				DD7F2CC7264FC5F30002CD51 /* Sources */,
 				DD7F2CC8264FC5F30002CD51 /* Frameworks */,
 				DD7F2CC9264FC5F30002CD51 /* Resources */,
+				DD7F2D0D264FC7A60002CD51 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DD7F2D08264FC7A60002CD51 /* PBXTargetDependency */,
 			);
 			name = PanglongKeyboard;
 			productName = PanglongKeyboard;
@@ -184,6 +230,23 @@
 			productReference = DD7F2CEC264FC5F40002CD51 /* PanglongKeyboardUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		DD7F2D01264FC7A60002CD51 /* Shan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD7F2D0A264FC7A60002CD51 /* Build configuration list for PBXNativeTarget "Shan" */;
+			buildPhases = (
+				DD7F2CFE264FC7A60002CD51 /* Sources */,
+				DD7F2CFF264FC7A60002CD51 /* Frameworks */,
+				DD7F2D00264FC7A60002CD51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Shan;
+			productName = Shan;
+			productReference = DD7F2D02264FC7A60002CD51 /* Shan.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -204,6 +267,9 @@
 						CreatedOnToolsVersion = 12.5;
 						TestTargetID = DD7F2CCA264FC5F30002CD51;
 					};
+					DD7F2D01264FC7A60002CD51 = {
+						CreatedOnToolsVersion = 12.5;
+					};
 				};
 			};
 			buildConfigurationList = DD7F2CC6264FC5F30002CD51 /* Build configuration list for PBXProject "PanglongKeyboard" */;
@@ -222,6 +288,7 @@
 				DD7F2CCA264FC5F30002CD51 /* PanglongKeyboard */,
 				DD7F2CE0264FC5F40002CD51 /* PanglongKeyboardTests */,
 				DD7F2CEB264FC5F40002CD51 /* PanglongKeyboardUITests */,
+				DD7F2D01264FC7A60002CD51 /* Shan */,
 			);
 		};
 /* End PBXProject section */
@@ -245,6 +312,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DD7F2CEA264FC5F40002CD51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD7F2D00264FC7A60002CD51 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -280,6 +354,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DD7F2CFE264FC7A60002CD51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD7F2D05264FC7A60002CD51 /* KeyboardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -292,6 +374,11 @@
 			isa = PBXTargetDependency;
 			target = DD7F2CCA264FC5F30002CD51 /* PanglongKeyboard */;
 			targetProxy = DD7F2CED264FC5F40002CD51 /* PBXContainerItemProxy */;
+		};
+		DD7F2D08264FC7A60002CD51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD7F2D01264FC7A60002CD51 /* Shan */;
+			targetProxy = DD7F2D07264FC7A60002CD51 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -434,6 +521,7 @@
 		DD7F2CF6264FC5F40002CD51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -453,6 +541,7 @@
 		DD7F2CF7264FC5F40002CD51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -553,6 +642,44 @@
 			};
 			name = Release;
 		};
+		DD7F2D0B264FC7A60002CD51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9M4Q67AQA8;
+				INFOPLIST_FILE = Shan/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shan.PanglongKeyboard.Shan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DD7F2D0C264FC7A60002CD51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9M4Q67AQA8;
+				INFOPLIST_FILE = Shan/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shan.PanglongKeyboard.Shan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -588,6 +715,15 @@
 			buildConfigurations = (
 				DD7F2CFC264FC5F40002CD51 /* Debug */,
 				DD7F2CFD264FC5F40002CD51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD7F2D0A264FC7A60002CD51 /* Build configuration list for PBXNativeTarget "Shan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD7F2D0B264FC7A60002CD51 /* Debug */,
+				DD7F2D0C264FC7A60002CD51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
