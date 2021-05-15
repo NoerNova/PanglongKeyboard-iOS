@@ -344,10 +344,11 @@ class KeyboardViewController: UIInputViewController {
                         switch key.type {
                         case Key.KeyType.keyboardChange:
                             keyView.addTarget(self,
-                                              action: #selector(KeyboardViewController.advanceTapped(_:)),
-                                              for: .touchUpInside)
+                                                  action: #selector(handleInputModeList(from:with:)),
+                                                  for: .allTouchEvents)
+                            keyView.originalViewTouch = true
                             keyView.addTarget(self,
-                                              action: #selector(KeyboardViewController.playCharacterKeySound(_:)),
+                                              action: #selector(KeyboardViewController.playOtherKeySound(_:)),
                                               for: .touchDown)
                         case Key.KeyType.backspace:
                             let cancelEvents: UIControl.Event = [UIControl.Event.touchUpInside, UIControl.Event.touchUpInside, UIControl.Event.touchDragExit, UIControl.Event.touchUpOutside, UIControl.Event.touchCancel, UIControl.Event.touchDragOutside]
@@ -388,6 +389,10 @@ class KeyboardViewController: UIInputViewController {
 //                            keyView.addTarget(self,
 //                                              action: #selector(KeyboardViewController.toggleSettings),
 //                                              for: .touchUpInside)
+                        case Key.KeyType.space, Key.KeyType.return:
+                            keyView.addTarget(self,
+                                              action: #selector(KeyboardViewController.playOtherKeySound(_:)),
+                                              for: .touchDown)
                         default:
                             break
                         }
@@ -422,12 +427,6 @@ class KeyboardViewController: UIInputViewController {
                             keyView.addTarget(self,
                                               action: #selector(KeyboardViewController.unHighlightKey(_:)),
                                               for: [.touchUpInside, .touchUpOutside, .touchDragOutside, .touchDragExit, .touchCancel])
-                        }
-                        
-                        if key.type == Key.KeyType.space || key.type == Key.KeyType.return {
-                            keyView.addTarget(self,
-                                              action: #selector(KeyboardViewController.playOtherKeySound(_:)),
-                                              for: .touchDown)
                         }
                         
 //                        keyView.addTarget(self, action: #selector(KeyboardViewController.KeySound(_:)), for: .touchDown)
@@ -538,67 +537,71 @@ class KeyboardViewController: UIInputViewController {
             // auto period on double space
             // TODO: timeout
             
-            self.handleAutoPeriod(model)
+            // Shan langaue may not need period
+            // self.handleAutoPeriod(model)
             // TODO: reset context
         }
         
         self.updateCapsIfNeeded()
     }
+
+    // MARK: - Auto Period
+//    func handleAutoPeriod(_ key: Key) {
+//        if !UserDefaults.standard.bool(forKey: kPeriodShortcut) {
+//            return
+//        }
+//
+//        if self.autoPeriodState == .firstSpace {
+//            if key.type != Key.KeyType.space {
+//                self.autoPeriodState = .noSpace
+//                return
+//            }
+//
+//            let charactersAreInCorrectState = { () -> Bool in
+//                let previousContext = self.textDocumentProxy.documentContextBeforeInput
+//
+//                if previousContext == nil || (previousContext!).count < 3 {
+//                    return false
+//                }
+//
+//                var index = previousContext!.endIndex
+//
+//                index = previousContext!.index(before: index)
+//                if previousContext![index] != " " {
+//                    return false
+//                }
+//
+//                index = previousContext!.index(before: index)
+//                if previousContext![index] != " " {
+//                    return false
+//                }
+//
+//                index = previousContext!.index(before: index)
+//                let char = previousContext![index]
+//                if self.characterIsWhitespace(char) || self.characterIsPunctuation(char) || char == "," {
+//                    return false
+//                }
+//
+//                return true
+//            }()
+//
+//            if charactersAreInCorrectState {
+//                self.textDocumentProxy.deleteBackward()
+//                self.textDocumentProxy.deleteBackward()
+//                self.textDocumentProxy.insertText(".")
+//                self.textDocumentProxy.insertText(" ")
+//            }
+//
+//            self.autoPeriodState = .noSpace
+//        }
+//        else {
+//            if key.type == Key.KeyType.space {
+//                self.autoPeriodState = .firstSpace
+//            }
+//        }
+//    }
     
-    func handleAutoPeriod(_ key: Key) {
-        if !UserDefaults.standard.bool(forKey: kPeriodShortcut) {
-            return
-        }
-        
-        if self.autoPeriodState == .firstSpace {
-            if key.type != Key.KeyType.space {
-                self.autoPeriodState = .noSpace
-                return
-            }
-            
-            let charactersAreInCorrectState = { () -> Bool in
-                let previousContext = self.textDocumentProxy.documentContextBeforeInput
-                
-                if previousContext == nil || (previousContext!).count < 3 {
-                    return false
-                }
-                
-                var index = previousContext!.endIndex
-                
-                index = previousContext!.index(before: index)
-                if previousContext![index] != " " {
-                    return false
-                }
-                
-                index = previousContext!.index(before: index)
-                if previousContext![index] != " " {
-                    return false
-                }
-                
-                index = previousContext!.index(before: index)
-                let char = previousContext![index]
-                if self.characterIsWhitespace(char) || self.characterIsPunctuation(char) || char == "," {
-                    return false
-                }
-                
-                return true
-            }()
-            
-            if charactersAreInCorrectState {
-                self.textDocumentProxy.deleteBackward()
-                self.textDocumentProxy.deleteBackward()
-                self.textDocumentProxy.insertText(".")
-                self.textDocumentProxy.insertText(" ")
-            }
-            
-            self.autoPeriodState = .noSpace
-        }
-        else {
-            if key.type == Key.KeyType.space {
-                self.autoPeriodState = .firstSpace
-            }
-        }
-    }
+    // MARK: - Backspace
     
     func cancelBackspaceTimers() {
         self.backspaceDelayTimer?.invalidate()
@@ -740,8 +743,9 @@ class KeyboardViewController: UIInputViewController {
         self.forwardingView.resetTrackedViews()
         self.shiftStartingState = nil
         self.shiftWasMultitapped = false
+        self.currentMode = 0
         
-        self.advanceToNextInputMode()
+        //self.advanceToNextInputMode()
         
     }
     

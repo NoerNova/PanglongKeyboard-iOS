@@ -68,7 +68,7 @@ func defaultKeyboard() -> Keyboard {
     }
 
     // ဵ   ှ    ီ    ႅ    ႂ်    ံ     ့    ရ    ႟
-    for key in ["ဵ", "ှ", "ီ", "ႅ", "ႂ်", "ံ", " ့", "ရ", "႟", "ႊ"] {
+    for key in ["ဵ", "ှ", "ီ", "ႅ", "ႂ်", "ံ", "့", "ရ", "႟", "ႊ"] {
         let keyModel = Key(.character)
         keyModel.setLetter(key)
         defaultKeyboard.add(key: Key(keyModel), row: 1, page: 1)
@@ -77,7 +77,7 @@ func defaultKeyboard() -> Keyboard {
     defaultKeyboard.add(key: Key(shiftKey), row: 2, page: 1)
     
     // ၾ    ꩪ    ꧠ    ꩮ    ႆ    ႃ    ွ    ၊    ။
-    for key in ["ၾ", "ၻ", "ꧠ", "ꩮ", "ႆ", " ွ", " ႃ", "ꧦ"] {
+    for key in ["ၾ", "ၻ", "ꧠ", "ꩮ", "ႆ", "ွ", "ႃ", "ꧦ"] {
         let keyModel = Key(.character)
         keyModel.setLetter(key)
         defaultKeyboard.add(key: Key(keyModel), row: 2, page: 1)

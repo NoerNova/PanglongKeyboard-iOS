@@ -34,7 +34,15 @@ class ForwardingView: UIView {
             return nil
         }
         else {
-            return (self.bounds.contains(point) ? self : nil)
+            if !self.bounds.contains(point) {
+                return nil
+            }
+            if let view = self.findNearesView(point),
+                let keyView = view as? KeyboardKey,
+                keyView.originalViewTouch {
+                return keyView
+            }
+            return self
         }
     }
     

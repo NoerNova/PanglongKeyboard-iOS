@@ -32,6 +32,8 @@ class KeyboardKey: UIControl {
     
     var vibrancy: VibrancyType?
     
+    var originalViewTouch: Bool = false
+    
     var text: String {
         didSet {
             self.label.text = text
