@@ -25,7 +25,8 @@ let kSmallLowercase = "kSmallLowercase"
 class KeyboardViewController: UIInputViewController {
     
     let backspaceDelay: TimeInterval = 0.5
-    let backspaceRepeat: TimeInterval = 0.07
+    let backspaceRepeat: TimeInterval = 0.1
+    let backspaceLongG: TimeInterval = 0.3
     
     var keyboard: Keyboard!
     var forwardingView: ForwardingView!
@@ -45,11 +46,12 @@ class KeyboardViewController: UIInputViewController {
     
     var backspaceActive: Bool {
         get {
-            return (backspaceDelayTimer != nil) || (backspaceRepeatTimer != nil)
+            return (backspaceDelayTimer != nil) || (backspaceRepeatTimer != nil) || (backspaceLongGTimer != nil)
         }
     }
     var backspaceDelayTimer: Timer?
     var backspaceRepeatTimer: Timer?
+    var backspaceLongGTimer: Timer?
     
     enum AutoPeriodState {
         case noSpace
@@ -123,6 +125,7 @@ class KeyboardViewController: UIInputViewController {
     deinit {
         backspaceDelayTimer?.invalidate()
         backspaceRepeatTimer?.invalidate()
+        backspaceLongGTimer?.invalidate()
         
         NotificationCenter.default.removeObserver(self)
     }
@@ -348,7 +351,7 @@ class KeyboardViewController: UIInputViewController {
                                                   for: .allTouchEvents)
                             keyView.originalViewTouch = true
                             keyView.addTarget(self,
-                                              action: #selector(KeyboardViewController.playOtherKeySound(_:)),
+                                              action: #selector(KeyboardViewController.playOtherKeySound),
                                               for: .touchDown)
                         case Key.KeyType.backspace:
                             let cancelEvents: UIControl.Event = [UIControl.Event.touchUpInside, UIControl.Event.touchUpInside, UIControl.Event.touchDragExit, UIControl.Event.touchUpOutside, UIControl.Event.touchCancel, UIControl.Event.touchDragOutside]
@@ -363,7 +366,7 @@ class KeyboardViewController: UIInputViewController {
                                               action: #selector(KeyboardViewController.keyPressedHelper(_:)),
                                               for: .touchUpInside)
                             keyView.addTarget(self,
-                                              action: #selector(KeyboardViewController.playBackSpaceKeySound(_:)),
+                                              action: #selector(KeyboardViewController.playBackSpaceKeySound),
                                               for: .touchDown)
                         case Key.KeyType.shift:
                             keyView.addTarget(self,
@@ -376,14 +379,14 @@ class KeyboardViewController: UIInputViewController {
                                               action: #selector(KeyboardViewController.shiftDoubleTapped(_:)),
                                               for: .touchDownRepeat)
                             keyView.addTarget(self,
-                                              action: #selector(KeyboardViewController.playOtherKeySound(_:)),
+                                              action: #selector(KeyboardViewController.playOtherKeySound),
                                               for: .touchDown)
                         case Key.KeyType.modeChange:
                             keyView.addTarget(self,
                                               action: #selector(KeyboardViewController.modeChangeTapped(_:)),
                                               for: .touchDown)
                             keyView.addTarget(self,
-                                              action: #selector(KeyboardViewController.playOtherKeySound(_:)),
+                                              action: #selector(KeyboardViewController.playOtherKeySound),
                                               for: .touchDown)
 //                        case Key.KeyType.settings:
 //                            keyView.addTarget(self,
@@ -391,7 +394,7 @@ class KeyboardViewController: UIInputViewController {
 //                                              for: .touchUpInside)
                         case Key.KeyType.space, Key.KeyType.return:
                             keyView.addTarget(self,
-                                              action: #selector(KeyboardViewController.playOtherKeySound(_:)),
+                                              action: #selector(KeyboardViewController.playOtherKeySound),
                                               for: .touchDown)
                         default:
                             break
@@ -409,7 +412,7 @@ class KeyboardViewController: UIInputViewController {
                                                   action: #selector(KeyboardViewController.hidePopupDelay(_:)),
                                                   for: [.touchUpInside, .touchUpOutside, .touchDragOutside])
                                 keyView.addTarget(self,
-                                                  action: #selector(KeyboardViewController.playCharacterKeySound(_:)),
+                                                  action: #selector(KeyboardViewController.playCharacterKeySound),
                                                   for: .touchDown)
                             }
                         }
@@ -606,8 +609,10 @@ class KeyboardViewController: UIInputViewController {
     func cancelBackspaceTimers() {
         self.backspaceDelayTimer?.invalidate()
         self.backspaceRepeatTimer?.invalidate()
+        self.backspaceLongGTimer?.invalidate()
         self.backspaceDelayTimer = nil
         self.backspaceRepeatTimer = nil
+        self.backspaceLongGTimer = nil
     }
     
     @objc func backspaceDown(_ sender: KeyboardKey) {
@@ -632,12 +637,57 @@ class KeyboardViewController: UIInputViewController {
     
     @objc func backspaceDelayCallback() {
         self.backspaceDelayTimer = nil
+        
+        // trigger for repeat deletes
         self.backspaceRepeatTimer = Timer.scheduledTimer(timeInterval: backspaceRepeat, target: self, selector: #selector(KeyboardViewController.backspaceRepeatCallback), userInfo: nil, repeats: true)
+        
+        // trigger for word deletes
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            // trigger after 3 second
+            self.backspaceRepeatTimer?.invalidate()
+            self.backspaceRepeatTimer = nil
+            self.backspaceLongGTimer = Timer.scheduledTimer(timeInterval: self.backspaceLongG, target: self, selector: #selector(KeyboardViewController.backspaceLongGCallback), userInfo: nil, repeats: true)
+        }
     }
     
     @objc func backspaceRepeatCallback() {
         self.textDocumentProxy.deleteBackward()
         self.updateCapsIfNeeded()
+        self.playBackSpaceKeySound()
+    }
+
+    
+    @objc func backspaceLongGCallback() {
+        // TODO: Figure out an implementation that doesn't use bridgeToObjectiveC, in case of funny unicode characters.
+        if let documentContextBeforeInput = textDocumentProxy.documentContextBeforeInput as NSString? {
+            if documentContextBeforeInput.length > 0 {
+                var charactersToDelete = 0
+                switch documentContextBeforeInput {
+                case let s where NSCharacterSet.letters.contains(Unicode.Scalar(s.character(at: s.length - 1))!): // Cursor in front of letter, so delete up to first non-letter character.
+                    let range = documentContextBeforeInput.rangeOfCharacter(from: NSCharacterSet.letters.inverted, options: .backwards)
+                    if range.location != NSNotFound {
+                        charactersToDelete = documentContextBeforeInput.length - range.location - 1
+                    } else {
+                        charactersToDelete = documentContextBeforeInput.length
+                    }
+                case let s where s.hasSuffix(" "): // Cursor in front of whitespace, so delete up to first non-whitespace character.
+                    let range = documentContextBeforeInput.rangeOfCharacter(from: NSCharacterSet.whitespaces.inverted, options: .backwards)
+                    if range.location != NSNotFound {
+                        charactersToDelete = documentContextBeforeInput.length - range.location - 1
+                    } else {
+                        charactersToDelete = documentContextBeforeInput.length
+                    }
+                default: // Just delete last character.
+                    charactersToDelete = 1
+                }
+
+                for _ in 0..<charactersToDelete {
+                    textDocumentProxy.deleteBackward()
+                }
+                self.updateCapsIfNeeded()
+                self.playBackSpaceKeySound()
+            }
+        }
     }
     
     @objc func shiftDown(_ sender: KeyboardKey) {
@@ -833,15 +883,15 @@ class KeyboardViewController: UIInputViewController {
     //    Press Delete - ID: 1155
     //    Press Modifier - ID: 1156
     
-    @objc func playCharacterKeySound(_ sender: KeyboardKey) {
+    @objc func playCharacterKeySound() {
         AudioServicesPlaySystemSound(1104);
     }
     
-    @objc func playBackSpaceKeySound(_ sender: KeyboardKey) {
+    @objc func playBackSpaceKeySound() {
         AudioServicesPlaySystemSound(1155);
     }
     
-    @objc func playOtherKeySound(_ sender: KeyboardKey) {
+    @objc func playOtherKeySound() {
         AudioServicesPlaySystemSound(1156);
     }
 
