@@ -435,6 +435,7 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         CATransaction.commit()
     }
     
+    // MARK: - UpdateKeyCap
     func updateKeyCap(_ key: KeyboardKey, model: Key, fullReset: Bool, uppercase: Bool, characterUppercase: Bool, shiftState: ShiftState) {
         if fullReset {
             // font size
@@ -480,15 +481,15 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
             }
             
             // images
-            if model.type == Key.KeyType.settings {
-                if let imageKey = key as? ImageKey {
-                    if imageKey.image == nil {
-                        let gearImage = UIImage(named: "gear")
-                        let settingsImageView = UIImageView(image: gearImage)
-                        imageKey.image = settingsImageView
-                    }
-                }
-            }
+//            if model.type == Key.KeyType.settings {
+//                if let imageKey = key as? ImageKey {
+//                    if imageKey.image == nil {
+//                        let gearImage = UIImage(named: "gear")
+//                        let settingsImageView = UIImageView(image: gearImage)
+//                        imageKey.image = settingsImageView
+//                    }
+//                }
+//            }
         }
         
         // MARK: - Update Shift
@@ -522,6 +523,10 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         }
         
         self.updateKeyCapText(key, model: model, uppercase: uppercase, characterUppercase: characterUppercase)
+        
+//        if model.type == Key.KeyType.return {
+//            updateReturnKeyText(key)
+//        }
     }
     
     func updateKeyCapText(_ key: KeyboardKey, model: Key, uppercase: Bool, characterUppercase: Bool) {
@@ -531,6 +536,37 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         else {
             key.text = model.keyCapForCase(uppercase)
         }
+    }
+    
+    // MARK: - Update return key
+    func updateReturnKeyText(textDocumentProxy: UITextDocumentProxy) {
+        
+        let returnKeyType = textDocumentProxy.returnKeyType
+
+        var text: String
+
+        switch returnKeyType ?? .default {
+        case .go, .next, .continue:
+            text = "သိုပ်ႇၵႂႃႇ"
+        case .google, .search, .route, .yahoo:
+            text = "သွၵ်ႈႁႃ"
+        case .join:
+            text = "ၶဝ်ႈႁူမ်ႈ"
+        case .send:
+            text = "သူင်ႇ"
+        case .done:
+            text = "ယဝ်ႉတူဝ်ႈ"
+        default:
+            text = "return"
+        }
+
+        for (model, key) in self.modelToView {
+            if model.type == Key.KeyType.return {
+                key.text = text
+            }
+        }
+        
+        // TODO: implement Color of return button
     }
     
     ///////////////
