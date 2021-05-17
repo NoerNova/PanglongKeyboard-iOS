@@ -52,7 +52,7 @@ func defaultKeyboard() -> Keyboard {
     defaultKeyboard.add(key: Key(space), row: 3, page: 0)
     
     let returnKey = Key(.return)
-    returnKey.uppercaseKeyCap = "return"
+    returnKey.uppercaseKeyCap = ""
     returnKey.uppercaseOutput = "\n"
     returnKey.lowercaseOutput = "\n"
     defaultKeyboard.add(key: Key(returnKey), row: 3, page: 0)

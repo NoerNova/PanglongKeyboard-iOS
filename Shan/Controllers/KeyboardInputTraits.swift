@@ -14,6 +14,7 @@ import UIKit
 
 
 var traitPollingTimer: CADisplayLink?
+var returnKeyTextTimer: CADisplayLink?
 
 extension KeyboardViewController {
     
@@ -33,6 +34,41 @@ extension KeyboardViewController {
                 self.updateAppearances(appearanceIsDark)
             }
         }
+    }
+    
+    func returnKeyTextAgent() {
+        returnKeyTextTimer?.invalidate()
+        returnKeyTextTimer = UIScreen.main.displayLink(withTarget: self, selector: #selector(KeyboardViewController.returnKeyText))
+        returnKeyTextTimer?.add(to: RunLoop.current, forMode: RunLoop.Mode.default)
+    }
+    
+    @objc func returnKeyText() {
+
+        let returnKeyType = self.textDocumentProxy.returnKeyType
+
+        var text: String
+
+        switch returnKeyType ?? .default {
+        case .go, .next, .continue:
+            text = "သိုပ်ႇၵႂႃႇ"
+        case .google, .search, .route, .yahoo:
+            text = "သွၵ်ႈႁႃ"
+        case .join:
+            text = "ၶဝ်ႈႁူမ်ႈ"
+        case .send:
+            text = "သူင်ႇ"
+        case .done:
+            text = "ယဝ်ႉတူဝ်ႈ"
+        default:
+            text = "return"
+        }
+        
+        if let layout = self.layout {
+            if text != layout.returnKeyType {
+                self.updateReturnKeyText(text)
+            }
+        }
+
     }
 }
 

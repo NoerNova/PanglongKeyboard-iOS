@@ -176,7 +176,7 @@ class KeyboardViewController: UIInputViewController {
     var constraintsAdded: Bool = false
     func setupLayout() {
         if !constraintsAdded {
-            self.layout = type(of: self).layoutClass.init(model: self.keyboard, superview: self.forwardingView, layoutConstants: type(of: self).layoutConstants, globalColors: type(of: self).globalColors, darkMode: self.darkMode(), solidColorMode: self.solidColorMode())
+            self.layout = type(of: self).layoutClass.init(model: self.keyboard, superview: self.forwardingView, layoutConstants: type(of: self).layoutConstants, globalColors: type(of: self).globalColors, darkMode: self.darkMode(), solidColorMode: self.solidColorMode(), returnKeyType: self.returnKeyTextType())
             
             self.layout?.initialize()
             self.setMode(0)
@@ -188,6 +188,9 @@ class KeyboardViewController: UIInputViewController {
             
             self.updateAppearances(self.darkMode())
             self.addInputTraitsObservers()
+            
+            self.updateReturnKeyText(self.returnKeyTextType())
+            self.returnKeyTextAgent()
             
             self.constraintsAdded = true
         }
@@ -201,6 +204,31 @@ class KeyboardViewController: UIInputViewController {
         }()
         
         return darkMode
+    }
+    
+    func returnKeyTextType() -> String {
+        
+        let returnKeyType = self.textDocumentProxy.returnKeyType
+
+        var text: String
+
+        switch returnKeyType ?? .default {
+        case .go, .next, .continue:
+            text = "သိုပ်ႇၵႂႃႇ"
+        case .google, .search, .route, .yahoo:
+            text = "သွၵ်ႈႁႃ"
+        case .join:
+            text = "ၶဝ်ႈႁူမ်ႈ"
+        case .send:
+            text = "သူင်ႇ"
+        case .done:
+            text = "ယဝ်ႉတူဝ်ႈ"
+        default:
+            text = "return"
+        }
+            
+        return text
+
     }
     
     func solidColorMode() -> Bool {
@@ -767,7 +795,13 @@ class KeyboardViewController: UIInputViewController {
     func updateKeyCaps(_ uppercase: Bool) {
         let characterUppercase = (UserDefaults.standard.bool(forKey: kSmallLowercase) ? uppercase : true)
         self.layout?.updateKeyCaps(false, uppercase: uppercase, characterUppercase: characterUppercase, shiftState: self.shiftState)
-        self.layout?.updateReturnKeyText(textDocumentProxy: self.textDocumentProxy)
+        
+        // MARK: - call update return key
+    }
+    
+    func updateReturnKeyText(_ text: String) {
+        self.layout?.updateReturnKeyText(text)
+        self.layout?.returnKeyType = text
     }
     
     @objc func modeChangeTapped(_ sender: KeyboardKey) {
@@ -790,15 +824,17 @@ class KeyboardViewController: UIInputViewController {
         self.setupKeys()
     }
     
-    @objc func advanceTapped(_ sender: KeyboardKey) {
-        self.forwardingView.resetTrackedViews()
-        self.shiftStartingState = nil
-        self.shiftWasMultitapped = false
-        self.currentMode = 0
-        
-        //self.advanceToNextInputMode()
-        
-    }
+    // MARK: - advanceTapped use for change next input mode
+    // migrate to system input list
+//    @objc func advanceTapped(_ sender: KeyboardKey) {
+//        self.forwardingView.resetTrackedViews()
+//        self.shiftStartingState = nil
+//        self.shiftWasMultitapped = false
+//        self.currentMode = 0
+//
+//        //self.advanceToNextInputMode()
+//
+//    }
     
 //    @IBAction func toggleSettings() {
 //        // lazy load settings

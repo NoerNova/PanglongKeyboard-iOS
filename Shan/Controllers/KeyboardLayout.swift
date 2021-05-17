@@ -284,7 +284,9 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
     var solidColorMode: Bool
     var initialized: Bool
     
-    required init(model: Keyboard, superview: UIView, layoutConstants: LayoutConstants.Type, globalColors: GlobalColors.Type, darkMode: Bool, solidColorMode: Bool) {
+    var returnKeyType: String
+    
+    required init(model: Keyboard, superview: UIView, layoutConstants: LayoutConstants.Type, globalColors: GlobalColors.Type, darkMode: Bool, solidColorMode: Bool, returnKeyType: String) {
         self.layoutConstants = layoutConstants
         self.globalColors = globalColors
         
@@ -294,6 +296,7 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         
         self.darkMode = darkMode
         self.solidColorMode = solidColorMode
+        self.returnKeyType = returnKeyType
     }
     
     // TODO: remove this method
@@ -401,6 +404,7 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         CATransaction.commit()
     }
     
+    // MARK: - update darkmode
     func updateKeyAppearance() {
         CATransaction.begin()
         CATransaction.setDisableActions(true)
@@ -523,10 +527,6 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         }
         
         self.updateKeyCapText(key, model: model, uppercase: uppercase, characterUppercase: characterUppercase)
-        
-//        if model.type == Key.KeyType.return {
-//            updateReturnKeyText(key)
-//        }
     }
     
     func updateKeyCapText(_ key: KeyboardKey, model: Key, uppercase: Bool, characterUppercase: Bool) {
@@ -538,35 +538,25 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         }
     }
     
+//    func updateReturnKeyText(_ key: KeyboardKey, model: Key, text: String) {
+//        if model.type == .return {
+//            key.text = text
+//        }
+//    }
+    
     // MARK: - Update return key
-    func updateReturnKeyText(textDocumentProxy: UITextDocumentProxy) {
-        
-        let returnKeyType = textDocumentProxy.returnKeyType
-
-        var text: String
-
-        switch returnKeyType ?? .default {
-        case .go, .next, .continue:
-            text = "သိုပ်ႇၵႂႃႇ"
-        case .google, .search, .route, .yahoo:
-            text = "သွၵ်ႈႁႃ"
-        case .join:
-            text = "ၶဝ်ႈႁူမ်ႈ"
-        case .send:
-            text = "သူင်ႇ"
-        case .done:
-            text = "ယဝ်ႉတူဝ်ႈ"
-        default:
-            text = "return"
-        }
+    func updateReturnKeyText(_ returnKeyText: String) {
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
 
         for (model, key) in self.modelToView {
-            if model.type == Key.KeyType.return {
-                key.text = text
+            if model.type == .return {
+                key.text = returnKeyText
+                print("returnKeyText: \(returnKeyText)")
             }
         }
-        
-        // TODO: implement Color of return button
+
+        CATransaction.commit()
     }
     
     ///////////////
