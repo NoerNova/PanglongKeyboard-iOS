@@ -552,7 +552,6 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         for (model, key) in self.modelToView {
             if model.type == .return {
                 key.text = returnKeyText
-                print("returnKeyText: \(returnKeyText)")
             }
         }
 

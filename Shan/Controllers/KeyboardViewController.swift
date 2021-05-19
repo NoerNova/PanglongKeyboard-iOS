@@ -679,15 +679,22 @@ class KeyboardViewController: UIInputViewController {
     }
     
     @objc func backspaceRepeatCallback() {
-        self.textDocumentProxy.deleteBackward()
-        self.updateCapsIfNeeded()
-        self.playBackSpaceKeySound()
+        if let documentContextBeforeInput = self.textDocumentProxy.documentContextBeforeInput as NSString? {
+            if documentContextBeforeInput.length > 0 {
+                self.textDocumentProxy.deleteBackward()
+                self.updateCapsIfNeeded()
+                self.playBackSpaceKeySound()
+            } else {
+                self.backspaceRepeatTimer?.invalidate()
+                self.backspaceRepeatTimer = nil
+            }
+        }
     }
 
     
     @objc func backspaceLongGCallback() {
         // TODO: Figure out an implementation that doesn't use bridgeToObjectiveC, in case of funny unicode characters.
-        if let documentContextBeforeInput = textDocumentProxy.documentContextBeforeInput as NSString? {
+        if let documentContextBeforeInput = self.textDocumentProxy.documentContextBeforeInput as NSString? {
             if documentContextBeforeInput.length > 0 {
                 var charactersToDelete = 0
                 switch documentContextBeforeInput {
@@ -714,6 +721,9 @@ class KeyboardViewController: UIInputViewController {
                 }
                 self.updateCapsIfNeeded()
                 self.playBackSpaceKeySound()
+            } else {
+                self.backspaceLongGTimer?.invalidate()
+                self.backspaceLongGTimer = nil
             }
         }
     }
