@@ -177,6 +177,7 @@ class GlobalColors: NSObject {
     class var darkModeTextColor: UIColor { get { return UIColor.white }}
     class var lightModeBorderColor: UIColor { get { return UIColor(hue: (214/360.0), saturation: 0.04, brightness: 0.65, alpha: 1.0) }}
     class var darkModeBorderColor: UIColor { get { return UIColor.clear }}
+    class var returnKeyBlue: UIColor { get { return UIColor.systemBlue }}
     
     class func regularKey(_ darkMode: Bool, solidColorMode: Bool) -> UIColor {
         if darkMode {
@@ -284,9 +285,9 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
     var solidColorMode: Bool
     var initialized: Bool
     
-    var returnKeyType: String
+    var returnKeyType: UIReturnKeyType
     
-    required init(model: Keyboard, superview: UIView, layoutConstants: LayoutConstants.Type, globalColors: GlobalColors.Type, darkMode: Bool, solidColorMode: Bool, returnKeyType: String) {
+    required init(model: Keyboard, superview: UIView, layoutConstants: LayoutConstants.Type, globalColors: GlobalColors.Type, darkMode: Bool, solidColorMode: Bool, returnKeyType: UIReturnKeyType) {
         self.layoutConstants = layoutConstants
         self.globalColors = globalColors
         
@@ -540,13 +541,43 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
     }
     
     // MARK: - Update return key
-    func updateReturnKeyText(_ returnKeyText: String) {
+    func updateReturnKeyText(_ returnKeyType: UIReturnKeyType) {
         CATransaction.begin()
         CATransaction.setDisableActions(true)
+        
+        var returnKeyText: String = "return"
+        var changeReturnColor: Bool = false
+
+        switch returnKeyType {
+        case .go:
+            returnKeyText = "သိုပ်ႇၵႂႃႇ"
+            changeReturnColor = true
+        case .next, .continue:
+            returnKeyText = "သိုပ်ႇၵႂႃႇ"
+            changeReturnColor = false
+        case .google, .search, .route, .yahoo:
+            returnKeyText = "သွၵ်ႈႁႃ"
+            changeReturnColor = true
+        case .join:
+            returnKeyText = "ၶဝ်ႈႁူမ်ႈ"
+            changeReturnColor = true
+        case .send:
+            returnKeyText = "သူင်ႇ"
+            changeReturnColor = true
+        case .done:
+            returnKeyText = "ယဝ်ႉတူဝ်ႈ"
+            changeReturnColor = true
+        default:
+            returnKeyText = "return"
+            changeReturnColor = false
+        }
 
         for (model, key) in self.modelToView {
             if model.type == .return {
                 key.text = returnKeyText
+                key.color = changeReturnColor ? self.globalColors.returnKeyBlue : self.globalColors.specialKey(self.darkMode, solidColorMode: self.solidColorMode)
+                key.textColor = changeReturnColor ? self.globalColors.darkModeTextColor : (darkMode ? self.globalColors.darkModeTextColor : self.globalColors.lightModeTextColor)
+                key.downTextColor = changeReturnColor ? (self.darkMode ? self.globalColors.darkModeTextColor : self.globalColors.lightModeTextColor) : nil
             }
         }
 

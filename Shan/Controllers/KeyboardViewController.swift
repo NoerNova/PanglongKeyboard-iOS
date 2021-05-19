@@ -206,28 +206,11 @@ class KeyboardViewController: UIInputViewController {
         return darkMode
     }
     
-    func returnKeyTextType() -> String {
+    func returnKeyTextType() -> UIReturnKeyType {
         
         let returnKeyType = self.textDocumentProxy.returnKeyType
-
-        var text: String
-
-        switch returnKeyType ?? .default {
-        case .go, .next, .continue:
-            text = "သိုပ်ႇၵႂႃႇ"
-        case .google, .search, .route, .yahoo:
-            text = "သွၵ်ႈႁႃ"
-        case .join:
-            text = "ၶဝ်ႈႁူမ်ႈ"
-        case .send:
-            text = "သူင်ႇ"
-        case .done:
-            text = "ယဝ်ႉတူဝ်ႈ"
-        default:
-            text = "return"
-        }
             
-        return text
+        return returnKeyType ?? .default
 
     }
     
@@ -809,9 +792,9 @@ class KeyboardViewController: UIInputViewController {
         // MARK: - call update return key
     }
     
-    func updateReturnKeyText(_ text: String) {
-        self.layout?.updateReturnKeyText(text)
-        self.layout?.returnKeyType = text
+    func updateReturnKeyText(_ returnKeyType: UIReturnKeyType) {
+        self.layout?.updateReturnKeyText(returnKeyType)
+        self.layout?.returnKeyType = returnKeyType
     }
     
     @objc func modeChangeTapped(_ sender: KeyboardKey) {
