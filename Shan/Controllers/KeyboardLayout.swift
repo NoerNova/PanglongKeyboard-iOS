@@ -536,13 +536,8 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         else {
             key.text = model.keyCapForCase(uppercase)
         }
+        self.updateReturnKeyText(self.returnKeyType)
     }
-    
-//    func updateReturnKeyText(_ key: KeyboardKey, model: Key, text: String) {
-//        if model.type == .return {
-//            key.text = text
-//        }
-//    }
     
     // MARK: - Update return key
     func updateReturnKeyText(_ returnKeyText: String) {
