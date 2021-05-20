@@ -26,14 +26,17 @@ extension KeyboardViewController {
     }
     
     @objc func pollTraits() {
+        
         let proxy = self.textDocumentProxy
         
         if let layout = self.layout {
-            let appearanceIsDark = (proxy.keyboardAppearance == UIKeyboardAppearance.dark)
+            let appearanceIsDark = (proxy.keyboardAppearance == UIKeyboardAppearance.dark) || self.traitCollection.userInterfaceStyle == .dark
             if appearanceIsDark != layout.darkMode {
                 self.updateAppearances(appearanceIsDark)
             }
         }
+        
+        
     }
     
     func returnKeyTextAgent() {
@@ -43,16 +46,24 @@ extension KeyboardViewController {
     }
     
     @objc func getReturnKeyType() {
-
+        
         let returnKeyType = self.textDocumentProxy.returnKeyType
-
+        
         
         if let layout = self.layout {
             if returnKeyType != layout.returnKeyType {
                 self.updateReturnKeyText(returnKeyType ?? .default)
             }
         }
-
+        
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        // Trait collection has already changed
+    }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        // Trait collection will change. Use this one so you know what the state is changing to.
     }
 }
 
