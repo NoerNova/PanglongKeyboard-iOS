@@ -365,20 +365,18 @@ class KeyboardViewController: UIInputViewController {
                                               action: #selector(KeyboardViewController.playOtherKeySound),
                                               for: .touchDown)
                         case Key.KeyType.backspace:
-                            let cancelEvents: UIControl.Event = [UIControl.Event.touchUpInside, UIControl.Event.touchUpInside, UIControl.Event.touchDragExit, UIControl.Event.touchUpOutside, UIControl.Event.touchCancel, UIControl.Event.touchDragOutside]
+                            let cancelEvents: UIControl.Event = [UIControl.Event.touchDragOutside, UIControl.Event.touchDragExit, UIControl.Event.touchUpInside, UIControl.Event.touchUpOutside, UIControl.Event.touchCancel]
                             
                             keyView.addTarget(self,
                                               action: #selector(KeyboardViewController.backspaceDown(_:)),
-                                              for: .touchDown)
+                                              for: .touchUpInside)
                             keyView.addTarget(self,
                                               action: #selector(KeyboardViewController.backspaceUp(_:)),
                                               for: cancelEvents)
+                            keyView.addTarget(self, action: #selector(KeyboardViewController.handleBackspaceLongPress(_:)), for: .touchDown)
                             keyView.addTarget(self,
                                               action: #selector(KeyboardViewController.keyPressedHelper(_:)),
                                               for: .touchUpInside)
-                            keyView.addTarget(self,
-                                              action: #selector(KeyboardViewController.playBackSpaceKeySound),
-                                              for: .touchDown)
                         case Key.KeyType.shift:
                             keyView.addTarget(self,
                                               action: #selector(KeyboardViewController.shiftDown(_:)),
@@ -618,25 +616,21 @@ class KeyboardViewController: UIInputViewController {
     // MARK: - Backspace
     
     func cancelBackspaceTimers() {
-        self.backspaceDelayTimer?.invalidate()
-        self.backspaceRepeatTimer?.invalidate()
+        NSObject.cancelPreviousPerformRequests(withTarget: self)
         self.backspaceLongGTimer?.invalidate()
-        self.backspaceDelayTimer = nil
-        self.backspaceRepeatTimer = nil
         self.backspaceLongGTimer = nil
+        self.backspaceDelayTimer?.invalidate()
+        self.backspaceDelayTimer = nil
+        self.backspaceRepeatTimer?.invalidate()
+        self.backspaceRepeatTimer = nil
     }
     
     @objc func backspaceDown(_ sender: KeyboardKey) {
         
         (sender.shape as? BackspaceShape)?.backSpaceDown = true
         
-        self.cancelBackspaceTimers()
-        
         self.textDocumentProxy.deleteBackward()
-        self.updateCapsIfNeeded()
-        
-        // trigger for subsequent deletes
-        self.backspaceDelayTimer = Timer.scheduledTimer(timeInterval: backspaceDelay - backspaceRepeat, target: self, selector: #selector(KeyboardViewController.backspaceDelayCallback), userInfo: nil, repeats: false)
+        self.playBackSpaceKeySound()
     }
     
     @objc func backspaceUp(_ sender: KeyboardKey) {
@@ -646,36 +640,44 @@ class KeyboardViewController: UIInputViewController {
         self.cancelBackspaceTimers()
     }
     
+    @objc func handleBackspaceLongPress(_ sender: KeyboardKey) {
+        
+        (sender.shape as? BackspaceShape)?.backSpaceDown = true
+        
+        // trigger for subsequent deletes
+        self.backspaceDelayTimer = Timer.scheduledTimer(timeInterval: backspaceDelay - backspaceRepeat, target: self, selector: #selector(KeyboardViewController.backspaceDelayCallback), userInfo: nil, repeats: false)
+    }
+    
     @objc func backspaceDelayCallback() {
-        self.backspaceDelayTimer = nil
         
         // trigger for repeat deletes
         self.backspaceRepeatTimer = Timer.scheduledTimer(timeInterval: backspaceRepeat, target: self, selector: #selector(KeyboardViewController.backspaceRepeatCallback), userInfo: nil, repeats: true)
         
-        // trigger for word deletes
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            // trigger after 3 second
-            self.backspaceRepeatTimer?.invalidate()
-            self.backspaceRepeatTimer = nil
-            self.backspaceLongGTimer = Timer.scheduledTimer(timeInterval: self.backspaceLongG, target: self, selector: #selector(KeyboardViewController.backspaceLongGCallback), userInfo: nil, repeats: true)
-        }
+        perform(#selector(handleDeleteWords), with: nil, afterDelay: 2.0)
     }
     
     @objc func backspaceRepeatCallback() {
         if let documentContextBeforeInput = self.textDocumentProxy.documentContextBeforeInput as NSString? {
             if documentContextBeforeInput.length > 0 {
                 self.textDocumentProxy.deleteBackward()
-                self.updateCapsIfNeeded()
+                //self.updateCapsIfNeeded()
                 self.playBackSpaceKeySound()
-            } else {
-                self.backspaceRepeatTimer?.invalidate()
-                self.backspaceRepeatTimer = nil
             }
         }
     }
-
+    
+    @objc func handleDeleteWords() {
+        self.backspaceDelayTimer?.invalidate()
+        self.backspaceDelayTimer = nil
+        self.backspaceRepeatTimer?.invalidate()
+        self.backspaceRepeatTimer = nil
+        
+        // trigger after 3 second
+        self.backspaceLongGTimer = Timer.scheduledTimer(timeInterval: self.backspaceLongG, target: self, selector: #selector(KeyboardViewController.backspaceLongGCallback), userInfo: nil, repeats: true)
+    }
     
     @objc func backspaceLongGCallback() {
+        
         // TODO: Figure out an implementation that doesn't use bridgeToObjectiveC, in case of funny unicode characters.
         if let documentContextBeforeInput = self.textDocumentProxy.documentContextBeforeInput as NSString? {
             if documentContextBeforeInput.length > 0 {
@@ -702,11 +704,8 @@ class KeyboardViewController: UIInputViewController {
                 for _ in 0..<charactersToDelete {
                     textDocumentProxy.deleteBackward()
                 }
-                self.updateCapsIfNeeded()
+                
                 self.playBackSpaceKeySound()
-            } else {
-                self.backspaceLongGTimer?.invalidate()
-                self.backspaceLongGTimer = nil
             }
         }
     }
