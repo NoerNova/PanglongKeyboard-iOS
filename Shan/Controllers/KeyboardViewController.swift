@@ -33,9 +33,6 @@ class KeyboardViewController: UIInputViewController {
     var layout: KeyboardLayout?
     var heightConstraint: NSLayoutConstraint?
     
-//    var bannerView: ExtraView?
-//    var settingsView: ExtraView?
-    
     var currentMode: Int {
         didSet {
             if oldValue != currentMode {
@@ -154,25 +151,6 @@ class KeyboardViewController: UIInputViewController {
         }
     }
     
-    /*
-    BUG NOTE
-
-    For some strange reason, a layout pass of the entire keyboard is triggered
-    whenever a popup shows up, if one of the following is done:
-
-    a) The forwarding view uses an autoresizing mask.
-    b) The forwarding view has constraints set anywhere other than init.
-
-    On the other hand, setting (non-autoresizing) constraints or just setting the
-    frame in layoutSubviews works perfectly fine.
-
-    I don't really know what to make of this. Am I doing Autolayout wrong, is it
-    a bug, or is it expected behavior? Perhaps this has to do with the fact that
-    the view's frame is only ever explicitly modified when set directly in layoutSubviews,
-    and not implicitly modified by various Autolayout constraints
-    (even though it should really not be changing).
-    */
-    
     var constraintsAdded: Bool = false
     func setupLayout() {
         if !constraintsAdded {
@@ -243,7 +221,6 @@ class KeyboardViewController: UIInputViewController {
         }
         
         // MARK:- for bannerView
-        //self.bannerView?.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: metric("topBanner"))
         
         let newOrigin = CGPoint(x: 0, y: self.view.bounds.height - self.forwardingView.bounds.height)
         self.forwardingView.frame.origin = newOrigin
@@ -270,16 +247,11 @@ class KeyboardViewController: UIInputViewController {
     }
     
     // TODO: this is currently not working as intended; only called when selection changed -- iOS bug
-//    override func textDidChange(_ textInput: UITextInput?) {
-//        self.contextChanged()
-//    }
-    
     override func textDidChange(_ textInput: UITextInput?) {
         self.contextChanged()
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        //self.bannerView?.isHidden = false
         // NOTE: self.interfaceOrientation
         self.keyboardHeight = self.height(forOrientation: self.preferredInterfaceOrientationForPresentation, withTopBanner: true)
     }
@@ -311,11 +283,6 @@ class KeyboardViewController: UIInputViewController {
     func height(forOrientation orientation: UIInterfaceOrientation, withTopBanner: Bool) -> CGFloat {
         let isPad = UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad
         
-        // AB: consider re-enabling this when interfaceOrientation actually breaks
-        //// HACK: Detecting orientation manually
-        //let screenSize: CGSize = UIScreen.main.bounds.size
-        //let orientation: UIInterfaceOrientation = screenSize.width < screenSize.height ? .portrait : .landscapeLeft
-        
         //TODO: hardcoded stuff
         let actualScreenWidth = (UIScreen.main.nativeBounds.size.width / UIScreen.main.nativeScale)
         let canonicalPortraitHeight: CGFloat
@@ -333,16 +300,6 @@ class KeyboardViewController: UIInputViewController {
         
         return CGFloat(orientation.isPortrait ? canonicalPortraitHeight + topBannerHeight : canonicalLandscapeHeight + topBannerHeight)
     }
-    
-    /*
-    BUG NOTE
-
-    None of the UIContentContainer methods are called for this controller.
-    */
-    
-    //override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-    //    super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
-    //}
     
     func setupKeys() {
         if self.layout == nil {
@@ -397,10 +354,6 @@ class KeyboardViewController: UIInputViewController {
                             keyView.addTarget(self,
                                               action: #selector(KeyboardViewController.playOtherKeySound),
                                               for: .touchDown)
-//                        case Key.KeyType.settings:
-//                            keyView.addTarget(self,
-//                                              action: #selector(KeyboardViewController.toggleSettings),
-//                                              for: .touchUpInside)
                         case Key.KeyType.space, Key.KeyType.return:
                             keyView.addTarget(self,
                                               action: #selector(KeyboardViewController.playOtherKeySound),
@@ -440,8 +393,6 @@ class KeyboardViewController: UIInputViewController {
                                               action: #selector(KeyboardViewController.unHighlightKey(_:)),
                                               for: [.touchUpInside, .touchUpOutside, .touchDragOutside, .touchDragExit, .touchCancel])
                         }
-                        
-//                        keyView.addTarget(self, action: #selector(KeyboardViewController.KeySound(_:)), for: .touchDown)
                     }
                 }
             }
@@ -519,8 +470,6 @@ class KeyboardViewController: UIInputViewController {
         self.layout?.darkMode = appearanceIsDark
         self.layout?.updateKeyAppearance()
         
-//        self.bannerView?.darkMode = appearanceIsDark
-//        self.settingsView?.darkMode = appearanceIsDark
     }
     
     @objc func highlightKey(_ sender: KeyboardKey) {
@@ -545,19 +494,12 @@ class KeyboardViewController: UIInputViewController {
             else if model.type == Key.KeyType.character && shiftState != .locked {
                 self.currentMode = 0
             }
-            
-            // auto period on double space
-            // TODO: timeout
-            
-            // Shan langaue may not need period
-            // self.handleAutoPeriod(model)
-            // TODO: reset context
         }
         
         self.updateCapsIfNeeded()
     }
 
-    // MARK: - Auto Period
+    // MARK: - Auto Period Not need in Shan Language, Leave for other language
 //    func handleAutoPeriod(_ key: Key) {
 //        if !UserDefaults.standard.bool(forKey: kPeriodShortcut) {
 //            return
@@ -816,51 +758,6 @@ class KeyboardViewController: UIInputViewController {
         self.setupKeys()
     }
     
-    // MARK: - advanceTapped use for change next input mode
-    // migrate to system input list
-//    @objc func advanceTapped(_ sender: KeyboardKey) {
-//        self.forwardingView.resetTrackedViews()
-//        self.shiftStartingState = nil
-//        self.shiftWasMultitapped = false
-//        self.currentMode = 0
-//
-//        //self.advanceToNextInputMode()
-//
-//    }
-    
-//    @IBAction func toggleSettings() {
-//        // lazy load settings
-//        if self.settingsView == nil {
-//            if let aSettings = self.createSettings() {
-//                aSettings.darkMode = self.darkMode()
-//
-//                aSettings.isHidden = true
-//                self.view.addSubview(aSettings)
-//                self.settingsView = aSettings
-//
-//                aSettings.translatesAutoresizingMaskIntoConstraints = false
-//
-//                let widthConstraint = NSLayoutConstraint(item: aSettings, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.width, multiplier: 1, constant: 0)
-//                let heightConstraint = NSLayoutConstraint(item: aSettings, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.height, multiplier: 1, constant: 0)
-//                let centerXConstraint = NSLayoutConstraint(item: aSettings, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
-//                let centerYConstraint = NSLayoutConstraint(item: aSettings, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0)
-//
-//                self.view.addConstraint(widthConstraint)
-//                self.view.addConstraint(heightConstraint)
-//                self.view.addConstraint(centerXConstraint)
-//                self.view.addConstraint(centerYConstraint)
-//            }
-//        }
-//
-////        if let settings = self.settingsView {
-////            let hidden = settings.isHidden
-////            settings.isHidden = !hidden
-////            self.forwardingView.isHidden = hidden
-////            self.forwardingView.isUserInteractionEnabled = !hidden
-////            self.bannerView?.isHidden = hidden
-////        }
-//    }
-    
     func updateCapsIfNeeded() {
             switch self.shiftState {
             case .disabled:
@@ -897,16 +794,6 @@ class KeyboardViewController: UIInputViewController {
     }
     
     // MARK: - Key Sound
-    // this only works if full access is enabled
-//    @objc func playKeySound() {
-//        if !UserDefaults.standard.bool(forKey: kKeyboardClicks) {
-//            return
-//        }
-//
-//        DispatchQueue.global(qos: .default).async(execute: {
-//            AudioServicesPlaySystemSound(1104)
-//        })
-//    }
     
     //    Press Click - ID: 1104
     //    Press Delete - ID: 1155
@@ -936,20 +823,5 @@ class KeyboardViewController: UIInputViewController {
     func keyPressed(_ key: Key) {
         self.textDocumentProxy.insertText(key.outPutForCase(self.shiftState.uppercase()))
     }
-    
-//    // a banner that sits in the empty space on top of the keyboard
-//    func createBanner() -> ExtraView? {
-//        // note that dark mode is not yet valid here, so we just put false for clarity
-//        //return ExtraView(globalColors: self.dynamicType.globalColors, darkMode: false, solidColorMode: self.solidColorMode())
-//        return nil
-//    }
-    
-    // a settings view that replaces the keyboard when the settings button is pressed
-//    func createSettings() -> ExtraView? {
-//        // note that dark mode is not yet valid here, so we just put false for clarity
-//        let settingsView = DefaultSettings(globalColors: type(of: self).globalColors, darkMode: false, solidColorMode: self.solidColorMode())
-//        settingsView.backButton?.addTarget(self, action: #selector(KeyboardViewController.toggleSettings), for: UIControlEvents.touchUpInside)
-//        return settingsView
-//    }
 }
 

@@ -38,7 +38,6 @@ class KeyboardKey: UIControl {
         didSet {
             self.label.text = text
             self.label.frame = CGRect(x: self.labelInset, y: self.labelInset, width: self.bounds.width - self.labelInset * 2, height: self.bounds.height - self.labelInset * 2)
-            self.redrawText()
         }
     }
     
@@ -86,12 +85,6 @@ class KeyboardKey: UIControl {
     override var isHighlighted: Bool {
         didSet {
             updateColors()
-        }
-    }
-    
-    override var frame: CGRect {
-        didSet {
-            self.redrawText()
         }
     }
     
@@ -225,7 +218,6 @@ class KeyboardKey: UIControl {
     
     func refreshViews() {
         self.refreshShapes()
-        self.redrawText()
         self.redrawShape()
         self.updateColors()
     }
@@ -307,13 +299,6 @@ class KeyboardKey: UIControl {
             self.shadowView.isHidden = true
             self.borderView?.isHidden = true
         }
-    }
-    
-    func redrawText() {
-//        self.keyView.frame = self.bounds
-//        self.button.frame = self.bounds
-//
-//        self.button.setTitle(self.text, forState: UIControlState.Normal)
     }
     
     func redrawShape() {
@@ -421,13 +406,6 @@ class KeyboardKey: UIControl {
         self.connector = KeyboardConnector(cornerRadius: 4, underOffset: self.underOffset, start: kv, end: p, startConnectable: kv, endConnectable: p, startDirection: direction, endDirection: direction.opposite())
         self.connector!.layer.zPosition = -1
         self.addSubview(self.connector!)
-        
-//        self.drawBorder = true
-        
-        if direction == Direction.up {
-//            self.popup!.drawUnder = false
-//            self.connector!.drawUnder = false
-        }
     }
     
     func showPopup() {
@@ -550,10 +528,6 @@ class ShapeView: UIView {
         super.init(frame: frame)
         
         self.shapeLayer = self.layer as? CAShapeLayer
-        
-        // optimization: off by default to ensure quick mode transitions; re-enable during rotations
-        //self.layer.shouldRasterize = true
-        //self.layer.rasterizationScale = UIScreen.mainScreen().scale
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -579,10 +553,4 @@ class ShapeView: UIView {
             }
         }
     }
-    
-//    override func drawRect(rect: CGRect) {
-//        if self.shapeLayer == nil {
-//            self.drawCall(rect)
-//        }
-//    }
 }

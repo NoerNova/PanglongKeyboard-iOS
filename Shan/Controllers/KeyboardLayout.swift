@@ -227,18 +227,6 @@ class GlobalColors: NSObject {
     }
 }
 
-//"darkShadowColor": UIColor(hue: (220/360.0), saturation: 0.04, brightness: 0.56, alpha: 1),
-//"blueColor": UIColor(hue: (211/360.0), saturation: 1.0, brightness: 1.0, alpha: 1),
-//"blueShadowColor": UIColor(hue: (216/360.0), saturation: 0.05, brightness: 0.43, alpha: 1),
-
-//extension CGRect: Hashable {
-//    public var hashValue: Int {
-//        get {
-//            return (origin.x.hashValue ^ origin.y.hashValue ^ size.width.hashValue ^ size.height.hashValue)
-//        }
-//    }
-//}
-
 extension CGRect: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(origin.x)
@@ -247,14 +235,6 @@ extension CGRect: Hashable {
         hasher.combine(size.height)
     }
 }
-
-//extension CGSize: Hashable {
-//    public var hashValue: Int {
-//        get {
-//            return (width.hashValue ^ height.hashValue)
-//        }
-//    }
-//}
 
 extension CGSize: Hashable {
     public func hash(into hasher: inout Hasher) {
@@ -484,17 +464,6 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
             default:
                 break
             }
-            
-            // images
-//            if model.type == Key.KeyType.settings {
-//                if let imageKey = key as? ImageKey {
-//                    if imageKey.image == nil {
-//                        let gearImage = UIImage(named: "gear")
-//                        let settingsImageView = UIImageView(image: gearImage)
-//                        imageKey.image = settingsImageView
-//                    }
-//                }
-//            }
         }
         
         // MARK: - Update Shift

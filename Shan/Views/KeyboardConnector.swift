@@ -16,7 +16,6 @@ protocol Connectable: AnyObject {
     func attach(_ direction: Direction?) // call with nil to detach
 }
 
-// TODO: Xcode crashes -- as of 2014-10-9, still crashes if implemented
 // <ConnectableView: UIView where ConnectableView: Connectable>
 class KeyboardConnector: KeyboardKeyBackground {
 

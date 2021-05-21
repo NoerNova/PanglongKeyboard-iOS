@@ -114,14 +114,6 @@ class KeyboardKeyBackground: UIView, Connectable {
         self.arcStartingAngles[1] = floatPi
         self.arcStartingAngles[3] = 0
         
-        //// actual coordinates for each edge, including translation
-        //self.segmentPoints.removeAll(keepCapacity: true)
-        //
-        //// actual coordinates for arc centers for each corner
-        //self.arcCenters.removeAll(keepCapacity: true)
-        //
-        //self.arcStartingAngles.removeAll(keepCapacity: true)
-        
         for i in 0 ..< self.startingPoints.count {
             let currentPoint = self.startingPoints[i]
             let nextPoint = self.startingPoints[(i + 1) % self.startingPoints.count]
@@ -158,13 +150,6 @@ class KeyboardKeyBackground: UIView, Connectable {
 
             self.arcCenters[i] = c
         }
-        
-        // order of edge drawing: left edge, down edge, right edge, up edge
-        
-        // We need to have separate paths for all the edges so we can toggle them as needed.
-        // Unfortunately, it doesn't seem possible to assemble the connected fill path
-        // by simply using CGPathAddPath, since it closes all the subpaths, so we have to
-        // duplicate the code a little bit.
         
         let fillPath = UIBezierPath()
         var edgePaths: [UIBezierPath] = []
