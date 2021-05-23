@@ -102,12 +102,12 @@ class KeyboardViewController: UIInputViewController {
             kSmallLowercase: false
         ])
         
-        self.keyboard = defaultKeyboard()
-        
         self.shiftState = .disabled
         self.currentMode = 0
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        self.keyboard = defaultKeyboard(needsInputModeSwitchKey)
         
         self.forwardingView = ForwardingView(frame: CGRect.zero)
         self.view.addSubview(self.forwardingView)
@@ -215,7 +215,7 @@ class KeyboardViewController: UIInputViewController {
             let characterUppercase = (UserDefaults.standard.bool(forKey: kSmallLowercase) ? uppercase : true)
 
             self.forwardingView.frame = orientationSavvyBounds
-            self.layout?.layoutKeys(self.currentMode, uppercase: uppercase, characterUppercase: characterUppercase, shiftState: self.shiftState)
+            self.layout?.layoutKeys(self.currentMode, uppercase: uppercase, characterUppercase: characterUppercase, shiftState: self.shiftState, needsInputModeSwitchKey: self.needsInputModeSwitchKey)
             self.lastLayoutBounds = orientationSavvyBounds
             self.setupKeys()
         }
@@ -753,7 +753,7 @@ class KeyboardViewController: UIInputViewController {
         
         let uppercase = self.shiftState.uppercase()
         let characterUppercase = (UserDefaults.standard.bool(forKey: kSmallLowercase) ? uppercase : true)
-        self.layout?.layoutKeys(mode, uppercase: uppercase, characterUppercase: characterUppercase, shiftState: self.shiftState)
+        self.layout?.layoutKeys(mode, uppercase: uppercase, characterUppercase: characterUppercase, shiftState: self.shiftState, needsInputModeSwitchKey: self.needsInputModeSwitchKey)
         
         self.setupKeys()
     }

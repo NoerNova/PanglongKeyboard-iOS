@@ -298,7 +298,7 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
     // CALL THESE FOR LAYOUT/APPEARANCE CHANGES //
     //////////////////////////////////////////////
     
-    func layoutKeys(_ pageNum: Int, uppercase: Bool, characterUppercase: Bool, shiftState: ShiftState) {
+    func layoutKeys(_ pageNum: Int, uppercase: Bool, characterUppercase: Bool, shiftState: ShiftState, needsInputModeSwitchKey: Bool) {
         CATransaction.begin()
         CATransaction.setDisableActions(true)
         
@@ -306,14 +306,14 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         if !type(of: self).shouldPoolKeys {
             if self.keyPool.isEmpty {
                 for p in 0..<self.model.pages.count {
-                    self.positionKeys(p)
+                    self.positionKeys(p, needsInputModeSwitchKey: needsInputModeSwitchKey)
                 }
                 self.updateKeyAppearance()
                 self.updateKeyCaps(true, uppercase: uppercase, characterUppercase: characterUppercase, shiftState: shiftState)
             }
         }
         
-        self.positionKeys(pageNum)
+        self.positionKeys(pageNum, needsInputModeSwitchKey: needsInputModeSwitchKey)
         
         // reset state
         for (p, page) in self.model.pages.enumerated() {
@@ -336,7 +336,7 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         CATransaction.commit()
     }
     
-    func positionKeys(_ pageNum: Int) {
+    func positionKeys(_ pageNum: Int, needsInputModeSwitchKey: Bool) {
         CATransaction.begin()
         CATransaction.setDisableActions(true)
         
@@ -346,7 +346,7 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
             self.viewToModel[view] = model
         }
         
-        if var keyMap = self.generateKeyFrames(self.model, bounds: self.superview.bounds, page: pageNum) {
+        if var keyMap = self.generateKeyFrames(self.model, bounds: self.superview.bounds, page: pageNum, needsInputModeSwitchKey: needsInputModeSwitchKey) {
             if type(of: self).shouldPoolKeys {
                 self.modelToView.removeAll(keepingCapacity: true)
                 self.viewToModel.removeAll(keepingCapacity: true)
@@ -791,7 +791,7 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         return round(measurement * UIScreen.main.scale) / UIScreen.main.scale
     }
     
-    func generateKeyFrames(_ model: Keyboard, bounds: CGRect, page pageToLayout: Int) -> [Key:CGRect]? {
+    func generateKeyFrames(_ model: Keyboard, bounds: CGRect, page pageToLayout: Int, needsInputModeSwitchKey: Bool) -> [Key:CGRect]? {
         if bounds.height == 0 || bounds.width == 0 {
             return nil
         }
@@ -876,7 +876,7 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
                     
                     // bottom row with things like space, return, etc.
                 else {
-                    frames = self.layoutSpecialKeysRow(row, keyWidth: letterKeyWidth, gapWidth: lastRowKeyGap, leftSideRatio: lastRowLeftSideRatio, rightSideRatio: lastRowRightSideRatio, micButtonRatio: self.layoutConstants.micButtonPortraitWidthRatioToOtherSpecialButtons, isLandscape: isLandscape, frame: frame)
+                    frames = self.layoutSpecialKeysRow(row, keyWidth: letterKeyWidth, gapWidth: lastRowKeyGap, leftSideRatio: lastRowLeftSideRatio, rightSideRatio: lastRowRightSideRatio, micButtonRatio: self.layoutConstants.micButtonPortraitWidthRatioToOtherSpecialButtons, isLandscape: isLandscape, frame: frame, needsInputModeSwitchKey: needsInputModeSwitchKey)
                 }
                 
                 processRow(row, frames, &keyMap)
@@ -981,7 +981,9 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         return frames
     }
     
-    func layoutSpecialKeysRow(_ row: [Key], keyWidth: CGFloat, gapWidth: CGFloat, leftSideRatio: CGFloat, rightSideRatio: CGFloat, micButtonRatio: CGFloat, isLandscape: Bool, frame: CGRect) -> [CGRect] {
+    // MARK: - Layout Special Keys Row
+    func layoutSpecialKeysRow(_ row: [Key], keyWidth: CGFloat, gapWidth: CGFloat, leftSideRatio: CGFloat, rightSideRatio: CGFloat, micButtonRatio: CGFloat, isLandscape: Bool, frame: CGRect, needsInputModeSwitchKey: Bool) -> [CGRect] {
+        
         var frames = [CGRect]()
         
         var keysBeforeSpace = 0
@@ -1023,6 +1025,11 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         var spaceWidth = frame.width - leftSideAreaWidth - rightSideAreaWidth - gapWidth * CGFloat(2)
         spaceWidth = rounded(spaceWidth)
         
+        var modeChangeWidth = gapWidth + leftButtonWidth * 2
+        modeChangeWidth = rounded(modeChangeWidth)
+
+        let needKeyboardChangeButton: Bool = needsInputModeSwitchKey
+        
         var currentOrigin = frame.origin.x
         var beforeSpace: Bool = true
         for (k, key) in row.enumerated() {
@@ -1030,6 +1037,10 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
                 frames.append(CGRect(x: rounded(currentOrigin), y: frame.origin.y, width: spaceWidth, height: frame.height))
                 currentOrigin += (spaceWidth + gapWidth)
                 beforeSpace = false
+            }
+            else if key.type == Key.KeyType.modeChange && !needKeyboardChangeButton {
+                frames.append(CGRect(x: rounded(currentOrigin), y: frame.origin.y, width: modeChangeWidth, height: frame.height))
+                currentOrigin += (modeChangeWidth + gapWidth)
             }
             else if beforeSpace {
                 if hasButtonInMicButtonPosition && k == 2 { //mic button position
