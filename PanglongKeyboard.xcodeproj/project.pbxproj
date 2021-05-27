@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD043513266036810089A0EE /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD043512266036810089A0EE /* AboutViewController.swift */; };
 		DD7F2CCF264FC5F30002CD51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F2CCE264FC5F30002CD51 /* AppDelegate.swift */; };
 		DD7F2CD1264FC5F30002CD51 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F2CD0264FC5F30002CD51 /* SceneDelegate.swift */; };
 		DD7F2CD3264FC5F30002CD51 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F2CD2264FC5F30002CD51 /* ViewController.swift */; };
@@ -17,6 +18,9 @@
 		DD7F2CF1264FC5F40002CD51 /* PanglongKeyboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F2CF0264FC5F40002CD51 /* PanglongKeyboardUITests.swift */; };
 		DD7F2D05264FC7A60002CD51 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F2D04264FC7A60002CD51 /* KeyboardViewController.swift */; };
 		DD7F2D09264FC7A60002CD51 /* Shan.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DD7F2D02264FC7A60002CD51 /* Shan.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DD86DF26265FBEA80036B101 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD86DF25265FBEA80036B101 /* LicenseViewController.swift */; };
+		DD86DF28265FBF4A0036B101 /* SetupKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD86DF27265FBF4A0036B101 /* SetupKeyboardViewController.swift */; };
+		DD86DF2C265FC0340036B101 /* CustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD86DF2B265FC0340036B101 /* CustomSegue.swift */; };
 		DDF7A838264FCBF700676869 /* ForwardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A835264FCBF700676869 /* ForwardingView.swift */; };
 		DDF7A839264FCBF700676869 /* KeyboardInputTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A836264FCBF700676869 /* KeyboardInputTraits.swift */; };
 		DDF7A83A264FCBF700676869 /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A837264FCBF700676869 /* KeyboardLayout.swift */; };
@@ -69,6 +73,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DD043512266036810089A0EE /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		DD7F2CCB264FC5F30002CD51 /* PanglongKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanglongKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD7F2CCE264FC5F30002CD51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD7F2CD0264FC5F30002CD51 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +91,9 @@
 		DD7F2D02264FC7A60002CD51 /* Shan.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Shan.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD7F2D04264FC7A60002CD51 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		DD7F2D06264FC7A60002CD51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD86DF25265FBEA80036B101 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
+		DD86DF27265FBF4A0036B101 /* SetupKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupKeyboardViewController.swift; sourceTree = "<group>"; };
+		DD86DF2B265FC0340036B101 /* CustomSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegue.swift; sourceTree = "<group>"; };
 		DDF7A835264FCBF700676869 /* ForwardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForwardingView.swift; sourceTree = "<group>"; };
 		DDF7A836264FCBF700676869 /* KeyboardInputTraits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardInputTraits.swift; sourceTree = "<group>"; };
 		DDF7A837264FCBF700676869 /* KeyboardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayout.swift; sourceTree = "<group>"; };
@@ -163,6 +171,10 @@
 				DD7F2CD7264FC5F40002CD51 /* Assets.xcassets */,
 				DD7F2CD9264FC5F40002CD51 /* LaunchScreen.storyboard */,
 				DD7F2CDC264FC5F40002CD51 /* Info.plist */,
+				DD86DF25265FBEA80036B101 /* LicenseViewController.swift */,
+				DD86DF27265FBF4A0036B101 /* SetupKeyboardViewController.swift */,
+				DD86DF2B265FC0340036B101 /* CustomSegue.swift */,
+				DD043512266036810089A0EE /* AboutViewController.swift */,
 			);
 			path = PanglongKeyboard;
 			sourceTree = "<group>";
@@ -397,7 +409,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD86DF2C265FC0340036B101 /* CustomSegue.swift in Sources */,
+				DD86DF26265FBEA80036B101 /* LicenseViewController.swift in Sources */,
 				DD7F2CD3264FC5F30002CD51 /* ViewController.swift in Sources */,
+				DD043513266036810089A0EE /* AboutViewController.swift in Sources */,
+				DD86DF28265FBF4A0036B101 /* SetupKeyboardViewController.swift in Sources */,
 				DD7F2CCF264FC5F30002CD51 /* AppDelegate.swift in Sources */,
 				DD7F2CD1264FC5F30002CD51 /* SceneDelegate.swift in Sources */,
 			);
