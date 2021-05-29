@@ -2,7 +2,7 @@
 //  AboutViewController.swift
 //  PanglongKeyboard
 //
-//  Created by NorHsangPha BoonHse on 28/5/2564 BE.
+//  Created by NorHsangPha BoonHse on 29/5/2564 BE.
 //
 
 import UIKit
@@ -13,23 +13,6 @@ class AboutViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
-        swipeRight.direction = .right
-        self.view!.addGestureRecognizer(swipeRight)
-        
-    }
-    
-    @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
-        if gesture.direction == UISwipeGestureRecognizer.Direction.right {
-            performSegue(withIdentifier: "BackFromAboutPage", sender: self)
-            
-        }
-    }
-    
-    
-    @IBAction func dismissAboutView(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
     }
     
 

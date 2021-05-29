@@ -3,7 +3,11 @@
 //  Shan
 //
 //  Created by NorHsangPha BoonHse on 7/5/2564 BE.
+//  Modified key, needsInputModeSwitchKey for iPhone X and above
 //
+//  Original by Alexei Baboulevitch TransliteratingKeyboard ForwardingView.swift
+//  Copyright (c) 2014 Alexei Baboulevitch ("Archagon"). All rights reserved.
+//  https://github.com/archagon/tasty-imitation-keyboard.git
 
 func defaultKeyboard(_ needsInputModeSwitchKey: Bool) -> Keyboard {
     let defaultKeyboard = Keyboard()
@@ -89,11 +93,11 @@ func defaultKeyboard(_ needsInputModeSwitchKey: Bool) -> Keyboard {
     
     defaultKeyboard.add(key: Key(backspace), row: 2, page: 1)
     
-    if needsInputModeSwitchKey {
-        defaultKeyboard.add(key: Key(keyModeChangeNumbers), row: 3, page: 1)
-    }
+    defaultKeyboard.add(key: Key(keyModeChangeNumbers), row: 3, page: 1)
     
-    defaultKeyboard.add(key: Key(keyboardChange), row: 3, page: 1)
+    if needsInputModeSwitchKey {
+        defaultKeyboard.add(key: Key(keyboardChange), row: 3, page: 1)
+    }
     
     defaultKeyboard.add(key: Key(space), row: 3, page: 1)
     

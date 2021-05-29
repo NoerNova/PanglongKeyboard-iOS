@@ -3,6 +3,7 @@
 //  Shan
 //
 //  Created by NorHsangPha BoonHse on 6/5/2564 BE.
+//  Modified for return, backspace, shift
 //
 //  Original by Alexei Baboulevitch TransliteratingKeyboard ForwardingView.swift
 //  Copyright (c) 2014 Alexei Baboulevitch ("Archagon"). All rights reserved.
