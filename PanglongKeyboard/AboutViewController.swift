@@ -5,6 +5,7 @@
 //  Created by NorHsangPha BoonHse on 29/5/2564 BE.
 //
 
+import SafariServices
 import UIKit
 
 class AboutViewController: UIViewController {
@@ -14,6 +15,15 @@ class AboutViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+
+    @IBAction func contactMe(_ sender: UIButton) {
+        guard let url = URL(string: "https://www.noernova.com") else {
+            return
+        }
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true)
+    }
+
     
 
     /*

@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DD043513266036810089A0EE /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD043512266036810089A0EE /* AboutViewController.swift */; };
+		DD2C17312662A4B60029C422 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2C17302662A4B60029C422 /* AboutViewController.swift */; };
+		DD2C173B2662CE590029C422 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DD2C173A2662CE590029C422 /* Settings.bundle */; };
 		DD7F2CCF264FC5F30002CD51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F2CCE264FC5F30002CD51 /* AppDelegate.swift */; };
 		DD7F2CD1264FC5F30002CD51 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F2CD0264FC5F30002CD51 /* SceneDelegate.swift */; };
 		DD7F2CD3264FC5F30002CD51 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F2CD2264FC5F30002CD51 /* ViewController.swift */; };
@@ -20,7 +21,6 @@
 		DD7F2D09264FC7A60002CD51 /* Shan.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DD7F2D02264FC7A60002CD51 /* Shan.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DD86DF26265FBEA80036B101 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD86DF25265FBEA80036B101 /* LicenseViewController.swift */; };
 		DD86DF28265FBF4A0036B101 /* SetupKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD86DF27265FBF4A0036B101 /* SetupKeyboardViewController.swift */; };
-		DD86DF2C265FC0340036B101 /* CustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD86DF2B265FC0340036B101 /* CustomSegue.swift */; };
 		DDF7A838264FCBF700676869 /* ForwardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A835264FCBF700676869 /* ForwardingView.swift */; };
 		DDF7A839264FCBF700676869 /* KeyboardInputTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A836264FCBF700676869 /* KeyboardInputTraits.swift */; };
 		DDF7A83A264FCBF700676869 /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A837264FCBF700676869 /* KeyboardLayout.swift */; };
@@ -73,7 +73,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		DD043512266036810089A0EE /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		DD2C17302662A4B60029C422 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		DD2C17352662B03B0029C422 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		DD2C173A2662CE590029C422 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		DD7F2CCB264FC5F30002CD51 /* PanglongKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanglongKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD7F2CCE264FC5F30002CD51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD7F2CD0264FC5F30002CD51 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,7 +95,6 @@
 		DD7F2D06264FC7A60002CD51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD86DF25265FBEA80036B101 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
 		DD86DF27265FBF4A0036B101 /* SetupKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupKeyboardViewController.swift; sourceTree = "<group>"; };
-		DD86DF2B265FC0340036B101 /* CustomSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegue.swift; sourceTree = "<group>"; };
 		DDF7A835264FCBF700676869 /* ForwardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForwardingView.swift; sourceTree = "<group>"; };
 		DDF7A836264FCBF700676869 /* KeyboardInputTraits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardInputTraits.swift; sourceTree = "<group>"; };
 		DDF7A837264FCBF700676869 /* KeyboardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayout.swift; sourceTree = "<group>"; };
@@ -139,14 +140,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD2C17342662B03B0029C422 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD2C17352662B03B0029C422 /* MessageUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DD7F2CC2264FC5F30002CD51 = {
 			isa = PBXGroup;
 			children = (
+				DD2C173A2662CE590029C422 /* Settings.bundle */,
 				DD7F2CCD264FC5F30002CD51 /* PanglongKeyboard */,
 				DD7F2CE4264FC5F40002CD51 /* PanglongKeyboardTests */,
 				DD7F2CEF264FC5F40002CD51 /* PanglongKeyboardUITests */,
 				DD7F2D03264FC7A60002CD51 /* Shan */,
 				DD7F2CCC264FC5F30002CD51 /* Products */,
+				DD2C17342662B03B0029C422 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,8 +184,7 @@
 				DD7F2CDC264FC5F40002CD51 /* Info.plist */,
 				DD86DF25265FBEA80036B101 /* LicenseViewController.swift */,
 				DD86DF27265FBF4A0036B101 /* SetupKeyboardViewController.swift */,
-				DD86DF2B265FC0340036B101 /* CustomSegue.swift */,
-				DD043512266036810089A0EE /* AboutViewController.swift */,
+				DD2C17302662A4B60029C422 /* AboutViewController.swift */,
 			);
 			path = PanglongKeyboard;
 			sourceTree = "<group>";
@@ -375,6 +385,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD2C173B2662CE590029C422 /* Settings.bundle in Resources */,
 				DD7F2CDB264FC5F40002CD51 /* LaunchScreen.storyboard in Resources */,
 				DD7F2CD8264FC5F40002CD51 /* Assets.xcassets in Resources */,
 				DD7F2CD6264FC5F30002CD51 /* Main.storyboard in Resources */,
@@ -409,10 +420,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD86DF2C265FC0340036B101 /* CustomSegue.swift in Sources */,
+				DD2C17312662A4B60029C422 /* AboutViewController.swift in Sources */,
 				DD86DF26265FBEA80036B101 /* LicenseViewController.swift in Sources */,
 				DD7F2CD3264FC5F30002CD51 /* ViewController.swift in Sources */,
-				DD043513266036810089A0EE /* AboutViewController.swift in Sources */,
 				DD86DF28265FBF4A0036B101 /* SetupKeyboardViewController.swift in Sources */,
 				DD7F2CCF264FC5F30002CD51 /* AppDelegate.swift in Sources */,
 				DD7F2CD1264FC5F30002CD51 /* SceneDelegate.swift in Sources */,
@@ -745,6 +755,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shan.PanglongKeyboard.Shan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -764,6 +775,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shan.PanglongKeyboard.Shan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

@@ -16,6 +16,7 @@ class LicenseViewController: UIViewController {
         
     }
     
+    
     @IBAction func dismissLicense(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
