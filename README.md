@@ -7,7 +7,7 @@ I'm forked this project structure's from [Tasty Imitation Keyboard](https://gith
 # Screen Short
 -----
 <img style="border: gray 1px solid;" width="320px" src="./Screenshot1.png"></img>
-<img style="border: gray 1px solid;" width="320" src="./Screenshot2.png"></img>
+<img style="border: gray 1px solid;" width="320px" src="./Screenshot2.png"></img>
 <img style="border: gray 1px solid;" width="320px" src="./Screenshot3.png"></img>
 <img style="border: gray 1px solid;" width="320px" src="./Screenshot4.png"></img>
 
