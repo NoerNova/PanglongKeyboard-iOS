@@ -7,65 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DD2C17312662A4B60029C422 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2C17302662A4B60029C422 /* AboutViewController.swift */; };
-		DD2C173B2662CE590029C422 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DD2C173A2662CE590029C422 /* Settings.bundle */; };
-		DD7F2CCF264FC5F30002CD51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F2CCE264FC5F30002CD51 /* AppDelegate.swift */; };
-		DD7F2CD1264FC5F30002CD51 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F2CD0264FC5F30002CD51 /* SceneDelegate.swift */; };
-		DD7F2CD3264FC5F30002CD51 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F2CD2264FC5F30002CD51 /* ViewController.swift */; };
-		DD7F2CD6264FC5F30002CD51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD7F2CD4264FC5F30002CD51 /* Main.storyboard */; };
-		DD7F2CD8264FC5F40002CD51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD7F2CD7264FC5F40002CD51 /* Assets.xcassets */; };
-		DD7F2CDB264FC5F40002CD51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD7F2CD9264FC5F40002CD51 /* LaunchScreen.storyboard */; };
-		DD7F2CE6264FC5F40002CD51 /* PanglongKeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F2CE5264FC5F40002CD51 /* PanglongKeyboardTests.swift */; };
-		DD7F2CF1264FC5F40002CD51 /* PanglongKeyboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F2CF0264FC5F40002CD51 /* PanglongKeyboardUITests.swift */; };
-		DD7F2D05264FC7A60002CD51 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F2D04264FC7A60002CD51 /* KeyboardViewController.swift */; };
-		DD7F2D09264FC7A60002CD51 /* Shan.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DD7F2D02264FC7A60002CD51 /* Shan.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		DD86DF26265FBEA80036B101 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD86DF25265FBEA80036B101 /* LicenseViewController.swift */; };
-		DD86DF28265FBF4A0036B101 /* SetupKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD86DF27265FBF4A0036B101 /* SetupKeyboardViewController.swift */; };
-		DDF7A838264FCBF700676869 /* ForwardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A835264FCBF700676869 /* ForwardingView.swift */; };
-		DDF7A839264FCBF700676869 /* KeyboardInputTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A836264FCBF700676869 /* KeyboardInputTraits.swift */; };
-		DDF7A83A264FCBF700676869 /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A837264FCBF700676869 /* KeyboardLayout.swift */; };
-		DDF7A83E264FCC2200676869 /* DefaultKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A83B264FCC2100676869 /* DefaultKeyboard.swift */; };
-		DDF7A83F264FCC2200676869 /* DirectionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A83C264FCC2100676869 /* DirectionEnum.swift */; };
-		DDF7A840264FCC2200676869 /* KeyboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A83D264FCC2200676869 /* KeyboardModel.swift */; };
-		DDF7A846264FCC2D00676869 /* ImageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A841264FCC2C00676869 /* ImageKey.swift */; };
-		DDF7A847264FCC2D00676869 /* KeyboardConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A842264FCC2C00676869 /* KeyboardConnector.swift */; };
-		DDF7A848264FCC2D00676869 /* KeyboardKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A843264FCC2C00676869 /* KeyboardKey.swift */; };
-		DDF7A849264FCC2D00676869 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A844264FCC2C00676869 /* Shapes.swift */; };
-		DDF7A84A264FCC2D00676869 /* KeyboardKeyBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7A845264FCC2D00676869 /* KeyboardKeyBackground.swift */; };
+		DD372ED4266436C6008CEBB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD372ED3266436C6008CEBB1 /* LaunchScreen.storyboard */; };
+		DD372EE02664371A008CEBB1 /* Shan.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DD372ED92664371A008CEBB1 /* Shan.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DD372EFE26643760008CEBB1 /* DirectionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD372EEE26643760008CEBB1 /* DirectionEnum.swift */; };
+		DD372EFF26643760008CEBB1 /* DefaultKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD372EEF26643760008CEBB1 /* DefaultKeyboard.swift */; };
+		DD372F0026643760008CEBB1 /* KeyboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD372EF026643760008CEBB1 /* KeyboardModel.swift */; };
+		DD372F0226643760008CEBB1 /* KeyboardInputTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD372EF426643760008CEBB1 /* KeyboardInputTraits.swift */; };
+		DD372F0326643760008CEBB1 /* ForwardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD372EF526643760008CEBB1 /* ForwardingView.swift */; };
+		DD372F0426643760008CEBB1 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD372EF626643760008CEBB1 /* KeyboardViewController.swift */; };
+		DD372F0526643760008CEBB1 /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD372EF726643760008CEBB1 /* KeyboardLayout.swift */; };
+		DD372F0626643760008CEBB1 /* KeyboardKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD372EF926643760008CEBB1 /* KeyboardKey.swift */; };
+		DD372F0726643760008CEBB1 /* KeyboardConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD372EFA26643760008CEBB1 /* KeyboardConnector.swift */; };
+		DD372F0826643760008CEBB1 /* ImageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD372EFB26643760008CEBB1 /* ImageKey.swift */; };
+		DD372F0926643760008CEBB1 /* KeyboardKeyBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD372EFC26643760008CEBB1 /* KeyboardKeyBackground.swift */; };
+		DD372F0A26643760008CEBB1 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD372EFD26643760008CEBB1 /* Shapes.swift */; };
+		DDA590A5266427D70028A6C9 /* PanglongKeyboardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA590A4266427D70028A6C9 /* PanglongKeyboardApp.swift */; };
+		DDA590A7266427D70028A6C9 /* MainSettingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA590A6266427D70028A6C9 /* MainSettingPage.swift */; };
+		DDA590AC266427D80028A6C9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDA590AB266427D80028A6C9 /* Preview Assets.xcassets */; };
+		DDA590B7266427D80028A6C9 /* PanglongKeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA590B6266427D80028A6C9 /* PanglongKeyboardTests.swift */; };
+		DDA590C2266427D80028A6C9 /* PanglongKeyboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA590C1266427D80028A6C9 /* PanglongKeyboardUITests.swift */; };
+		DDA590D3266428B40028A6C9 /* LicensePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA590CF266428B40028A6C9 /* LicensePage.swift */; };
+		DDA590D4266428B40028A6C9 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = DDA590D0266428B40028A6C9 /* LICENSE.txt */; };
+		DDA590D5266428B40028A6C9 /* AddKeyboardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA590D1266428B40028A6C9 /* AddKeyboardPage.swift */; };
+		DDA590D6266428B40028A6C9 /* AboutPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA590D2266428B40028A6C9 /* AboutPage.swift */; };
+		DDA590DA266429240028A6C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDA590D9266429240028A6C9 /* Assets.xcassets */; };
+		DDA590DC266429C60028A6C9 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DDA590DB266429C60028A6C9 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DD7F2CE2264FC5F40002CD51 /* PBXContainerItemProxy */ = {
+		DD372EDE2664371A008CEBB1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = DD7F2CC3264FC5F30002CD51 /* Project object */;
+			containerPortal = DDA59099266427D70028A6C9 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DD7F2CCA264FC5F30002CD51;
-			remoteInfo = PanglongKeyboard;
-		};
-		DD7F2CED264FC5F40002CD51 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DD7F2CC3264FC5F30002CD51 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DD7F2CCA264FC5F30002CD51;
-			remoteInfo = PanglongKeyboard;
-		};
-		DD7F2D07264FC7A60002CD51 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DD7F2CC3264FC5F30002CD51 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DD7F2D01264FC7A60002CD51;
+			remoteGlobalIDString = DD372ED82664371A008CEBB1;
 			remoteInfo = Shan;
+		};
+		DDA590B3266427D80028A6C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDA59099266427D70028A6C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDA590A0266427D70028A6C9;
+			remoteInfo = PanglongKeyboard;
+		};
+		DDA590BE266427D80028A6C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDA59099266427D70028A6C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDA590A0266427D70028A6C9;
+			remoteInfo = PanglongKeyboard;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		DD7F2D0D264FC7A60002CD51 /* Embed App Extensions */ = {
+		DD372EE42664371A008CEBB1 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				DD7F2D09264FC7A60002CD51 /* Shan.appex in Embed App Extensions */,
+				DD372EE02664371A008CEBB1 /* Shan.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,64 +73,63 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		DD2C17302662A4B60029C422 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		DD2C17352662B03B0029C422 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		DD2C173A2662CE590029C422 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		DD7F2CCB264FC5F30002CD51 /* PanglongKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanglongKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD7F2CCE264FC5F30002CD51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DD7F2CD0264FC5F30002CD51 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DD7F2CD2264FC5F30002CD51 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DD7F2CD5264FC5F30002CD51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DD7F2CD7264FC5F40002CD51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DD7F2CDA264FC5F40002CD51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DD7F2CDC264FC5F40002CD51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DD7F2CE1264FC5F40002CD51 /* PanglongKeyboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PanglongKeyboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD7F2CE5264FC5F40002CD51 /* PanglongKeyboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanglongKeyboardTests.swift; sourceTree = "<group>"; };
-		DD7F2CE7264FC5F40002CD51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DD7F2CEC264FC5F40002CD51 /* PanglongKeyboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PanglongKeyboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD7F2CF0264FC5F40002CD51 /* PanglongKeyboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanglongKeyboardUITests.swift; sourceTree = "<group>"; };
-		DD7F2CF2264FC5F40002CD51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DD7F2D02264FC7A60002CD51 /* Shan.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Shan.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD7F2D04264FC7A60002CD51 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
-		DD7F2D06264FC7A60002CD51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DD86DF25265FBEA80036B101 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
-		DD86DF27265FBF4A0036B101 /* SetupKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupKeyboardViewController.swift; sourceTree = "<group>"; };
-		DDF7A835264FCBF700676869 /* ForwardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForwardingView.swift; sourceTree = "<group>"; };
-		DDF7A836264FCBF700676869 /* KeyboardInputTraits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardInputTraits.swift; sourceTree = "<group>"; };
-		DDF7A837264FCBF700676869 /* KeyboardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayout.swift; sourceTree = "<group>"; };
-		DDF7A83B264FCC2100676869 /* DefaultKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultKeyboard.swift; sourceTree = "<group>"; };
-		DDF7A83C264FCC2100676869 /* DirectionEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionEnum.swift; sourceTree = "<group>"; };
-		DDF7A83D264FCC2200676869 /* KeyboardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardModel.swift; sourceTree = "<group>"; };
-		DDF7A841264FCC2C00676869 /* ImageKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageKey.swift; sourceTree = "<group>"; };
-		DDF7A842264FCC2C00676869 /* KeyboardConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardConnector.swift; sourceTree = "<group>"; };
-		DDF7A843264FCC2C00676869 /* KeyboardKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardKey.swift; sourceTree = "<group>"; };
-		DDF7A844264FCC2C00676869 /* Shapes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
-		DDF7A845264FCC2D00676869 /* KeyboardKeyBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardKeyBackground.swift; sourceTree = "<group>"; };
+		DD372ED3266436C6008CEBB1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DD372ED92664371A008CEBB1 /* Shan.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Shan.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD372EDD2664371A008CEBB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD372EEE26643760008CEBB1 /* DirectionEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionEnum.swift; sourceTree = "<group>"; };
+		DD372EEF26643760008CEBB1 /* DefaultKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultKeyboard.swift; sourceTree = "<group>"; };
+		DD372EF026643760008CEBB1 /* KeyboardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardModel.swift; sourceTree = "<group>"; };
+		DD372EF426643760008CEBB1 /* KeyboardInputTraits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardInputTraits.swift; sourceTree = "<group>"; };
+		DD372EF526643760008CEBB1 /* ForwardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForwardingView.swift; sourceTree = "<group>"; };
+		DD372EF626643760008CEBB1 /* KeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		DD372EF726643760008CEBB1 /* KeyboardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayout.swift; sourceTree = "<group>"; };
+		DD372EF926643760008CEBB1 /* KeyboardKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardKey.swift; sourceTree = "<group>"; };
+		DD372EFA26643760008CEBB1 /* KeyboardConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardConnector.swift; sourceTree = "<group>"; };
+		DD372EFB26643760008CEBB1 /* ImageKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageKey.swift; sourceTree = "<group>"; };
+		DD372EFC26643760008CEBB1 /* KeyboardKeyBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardKeyBackground.swift; sourceTree = "<group>"; };
+		DD372EFD26643760008CEBB1 /* Shapes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		DDA590A1266427D70028A6C9 /* PanglongKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanglongKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDA590A4266427D70028A6C9 /* PanglongKeyboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanglongKeyboardApp.swift; sourceTree = "<group>"; };
+		DDA590A6266427D70028A6C9 /* MainSettingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingPage.swift; sourceTree = "<group>"; };
+		DDA590AB266427D80028A6C9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DDA590AD266427D80028A6C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDA590B2266427D80028A6C9 /* PanglongKeyboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PanglongKeyboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDA590B6266427D80028A6C9 /* PanglongKeyboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanglongKeyboardTests.swift; sourceTree = "<group>"; };
+		DDA590B8266427D80028A6C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDA590BD266427D80028A6C9 /* PanglongKeyboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PanglongKeyboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDA590C1266427D80028A6C9 /* PanglongKeyboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanglongKeyboardUITests.swift; sourceTree = "<group>"; };
+		DDA590C3266427D80028A6C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDA590CF266428B40028A6C9 /* LicensePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicensePage.swift; sourceTree = "<group>"; };
+		DDA590D0266428B40028A6C9 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		DDA590D1266428B40028A6C9 /* AddKeyboardPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddKeyboardPage.swift; sourceTree = "<group>"; };
+		DDA590D2266428B40028A6C9 /* AboutPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPage.swift; sourceTree = "<group>"; };
+		DDA590D9266429240028A6C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DDA590DB266429C60028A6C9 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DD7F2CC8264FC5F30002CD51 /* Frameworks */ = {
+		DD372ED62664371A008CEBB1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DD7F2CDE264FC5F40002CD51 /* Frameworks */ = {
+		DDA5909E266427D70028A6C9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DD7F2CE9264FC5F40002CD51 /* Frameworks */ = {
+		DDA590AF266427D80028A6C9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DD7F2CFF264FC7A60002CD51 /* Frameworks */ = {
+		DDA590BA266427D80028A6C9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -140,190 +139,134 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DD2C17342662B03B0029C422 /* Frameworks */ = {
+		DD372EDA2664371A008CEBB1 /* Shan */ = {
 			isa = PBXGroup;
 			children = (
-				DD2C17352662B03B0029C422 /* MessageUI.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DD7F2CC2264FC5F30002CD51 = {
-			isa = PBXGroup;
-			children = (
-				DD2C173A2662CE590029C422 /* Settings.bundle */,
-				DD7F2CCD264FC5F30002CD51 /* PanglongKeyboard */,
-				DD7F2CE4264FC5F40002CD51 /* PanglongKeyboardTests */,
-				DD7F2CEF264FC5F40002CD51 /* PanglongKeyboardUITests */,
-				DD7F2D03264FC7A60002CD51 /* Shan */,
-				DD7F2CCC264FC5F30002CD51 /* Products */,
-				DD2C17342662B03B0029C422 /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		DD7F2CCC264FC5F30002CD51 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DD7F2CCB264FC5F30002CD51 /* PanglongKeyboard.app */,
-				DD7F2CE1264FC5F40002CD51 /* PanglongKeyboardTests.xctest */,
-				DD7F2CEC264FC5F40002CD51 /* PanglongKeyboardUITests.xctest */,
-				DD7F2D02264FC7A60002CD51 /* Shan.appex */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		DD7F2CCD264FC5F30002CD51 /* PanglongKeyboard */ = {
-			isa = PBXGroup;
-			children = (
-				DD7F2CCE264FC5F30002CD51 /* AppDelegate.swift */,
-				DD7F2CD0264FC5F30002CD51 /* SceneDelegate.swift */,
-				DD7F2CD2264FC5F30002CD51 /* ViewController.swift */,
-				DD7F2CD4264FC5F30002CD51 /* Main.storyboard */,
-				DD7F2CD7264FC5F40002CD51 /* Assets.xcassets */,
-				DD7F2CD9264FC5F40002CD51 /* LaunchScreen.storyboard */,
-				DD7F2CDC264FC5F40002CD51 /* Info.plist */,
-				DD86DF25265FBEA80036B101 /* LicenseViewController.swift */,
-				DD86DF27265FBF4A0036B101 /* SetupKeyboardViewController.swift */,
-				DD2C17302662A4B60029C422 /* AboutViewController.swift */,
-			);
-			path = PanglongKeyboard;
-			sourceTree = "<group>";
-		};
-		DD7F2CE4264FC5F40002CD51 /* PanglongKeyboardTests */ = {
-			isa = PBXGroup;
-			children = (
-				DD7F2CE5264FC5F40002CD51 /* PanglongKeyboardTests.swift */,
-				DD7F2CE7264FC5F40002CD51 /* Info.plist */,
-			);
-			path = PanglongKeyboardTests;
-			sourceTree = "<group>";
-		};
-		DD7F2CEF264FC5F40002CD51 /* PanglongKeyboardUITests */ = {
-			isa = PBXGroup;
-			children = (
-				DD7F2CF0264FC5F40002CD51 /* PanglongKeyboardUITests.swift */,
-				DD7F2CF2264FC5F40002CD51 /* Info.plist */,
-			);
-			path = PanglongKeyboardUITests;
-			sourceTree = "<group>";
-		};
-		DD7F2D03264FC7A60002CD51 /* Shan */ = {
-			isa = PBXGroup;
-			children = (
-				DDF7A834264FCBDE00676869 /* Views */,
-				DDF7A833264FCBD200676869 /* Supporting Files */,
-				DDF7A832264FCAB000676869 /* Models */,
-				DDF7A831264FCAA800676869 /* Controllers */,
+				DD372EF326643760008CEBB1 /* Controllers */,
+				DD372EED26643760008CEBB1 /* Models */,
+				DD372EF126643760008CEBB1 /* Supporting Files */,
+				DD372EF826643760008CEBB1 /* Views */,
 			);
 			path = Shan;
 			sourceTree = "<group>";
 		};
-		DDF7A831264FCAA800676869 /* Controllers */ = {
+		DD372EED26643760008CEBB1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DDF7A835264FCBF700676869 /* ForwardingView.swift */,
-				DDF7A836264FCBF700676869 /* KeyboardInputTraits.swift */,
-				DDF7A837264FCBF700676869 /* KeyboardLayout.swift */,
-				DD7F2D04264FC7A60002CD51 /* KeyboardViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		DDF7A832264FCAB000676869 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				DDF7A83B264FCC2100676869 /* DefaultKeyboard.swift */,
-				DDF7A83C264FCC2100676869 /* DirectionEnum.swift */,
-				DDF7A83D264FCC2200676869 /* KeyboardModel.swift */,
+				DD372EEE26643760008CEBB1 /* DirectionEnum.swift */,
+				DD372EEF26643760008CEBB1 /* DefaultKeyboard.swift */,
+				DD372EF026643760008CEBB1 /* KeyboardModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		DDF7A833264FCBD200676869 /* Supporting Files */ = {
+		DD372EF126643760008CEBB1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DD7F2D06264FC7A60002CD51 /* Info.plist */,
+				DD372EDD2664371A008CEBB1 /* Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DDF7A834264FCBDE00676869 /* Views */ = {
+		DD372EF326643760008CEBB1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DDF7A841264FCC2C00676869 /* ImageKey.swift */,
-				DDF7A842264FCC2C00676869 /* KeyboardConnector.swift */,
-				DDF7A843264FCC2C00676869 /* KeyboardKey.swift */,
-				DDF7A845264FCC2D00676869 /* KeyboardKeyBackground.swift */,
-				DDF7A844264FCC2C00676869 /* Shapes.swift */,
+				DD372EF426643760008CEBB1 /* KeyboardInputTraits.swift */,
+				DD372EF526643760008CEBB1 /* ForwardingView.swift */,
+				DD372EF626643760008CEBB1 /* KeyboardViewController.swift */,
+				DD372EF726643760008CEBB1 /* KeyboardLayout.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DD372EF826643760008CEBB1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DD372EF926643760008CEBB1 /* KeyboardKey.swift */,
+				DD372EFA26643760008CEBB1 /* KeyboardConnector.swift */,
+				DD372EFB26643760008CEBB1 /* ImageKey.swift */,
+				DD372EFC26643760008CEBB1 /* KeyboardKeyBackground.swift */,
+				DD372EFD26643760008CEBB1 /* Shapes.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DDA59098266427D70028A6C9 = {
+			isa = PBXGroup;
+			children = (
+				DDA590DB266429C60028A6C9 /* Settings.bundle */,
+				DDA590A3266427D70028A6C9 /* PanglongKeyboard */,
+				DDA590B5266427D80028A6C9 /* PanglongKeyboardTests */,
+				DDA590C0266427D80028A6C9 /* PanglongKeyboardUITests */,
+				DD372EDA2664371A008CEBB1 /* Shan */,
+				DDA590A2266427D70028A6C9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DDA590A2266427D70028A6C9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DDA590A1266427D70028A6C9 /* PanglongKeyboard.app */,
+				DDA590B2266427D80028A6C9 /* PanglongKeyboardTests.xctest */,
+				DDA590BD266427D80028A6C9 /* PanglongKeyboardUITests.xctest */,
+				DD372ED92664371A008CEBB1 /* Shan.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DDA590A3266427D70028A6C9 /* PanglongKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				DDA590A4266427D70028A6C9 /* PanglongKeyboardApp.swift */,
+				DDA590A6266427D70028A6C9 /* MainSettingPage.swift */,
+				DDA590D2266428B40028A6C9 /* AboutPage.swift */,
+				DD372ED3266436C6008CEBB1 /* LaunchScreen.storyboard */,
+				DDA590D1266428B40028A6C9 /* AddKeyboardPage.swift */,
+				DDA590D0266428B40028A6C9 /* LICENSE.txt */,
+				DDA590D9266429240028A6C9 /* Assets.xcassets */,
+				DDA590CF266428B40028A6C9 /* LicensePage.swift */,
+				DDA590AD266427D80028A6C9 /* Info.plist */,
+				DDA590AA266427D80028A6C9 /* Preview Content */,
+			);
+			path = PanglongKeyboard;
+			sourceTree = "<group>";
+		};
+		DDA590AA266427D80028A6C9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DDA590AB266427D80028A6C9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DDA590B5266427D80028A6C9 /* PanglongKeyboardTests */ = {
+			isa = PBXGroup;
+			children = (
+				DDA590B6266427D80028A6C9 /* PanglongKeyboardTests.swift */,
+				DDA590B8266427D80028A6C9 /* Info.plist */,
+			);
+			path = PanglongKeyboardTests;
+			sourceTree = "<group>";
+		};
+		DDA590C0266427D80028A6C9 /* PanglongKeyboardUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DDA590C1266427D80028A6C9 /* PanglongKeyboardUITests.swift */,
+				DDA590C3266427D80028A6C9 /* Info.plist */,
+			);
+			path = PanglongKeyboardUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DD7F2CCA264FC5F30002CD51 /* PanglongKeyboard */ = {
+		DD372ED82664371A008CEBB1 /* Shan */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DD7F2CF5264FC5F40002CD51 /* Build configuration list for PBXNativeTarget "PanglongKeyboard" */;
+			buildConfigurationList = DD372EE12664371A008CEBB1 /* Build configuration list for PBXNativeTarget "Shan" */;
 			buildPhases = (
-				DD7F2CC7264FC5F30002CD51 /* Sources */,
-				DD7F2CC8264FC5F30002CD51 /* Frameworks */,
-				DD7F2CC9264FC5F30002CD51 /* Resources */,
-				DD7F2D0D264FC7A60002CD51 /* Embed App Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DD7F2D08264FC7A60002CD51 /* PBXTargetDependency */,
-			);
-			name = PanglongKeyboard;
-			productName = PanglongKeyboard;
-			productReference = DD7F2CCB264FC5F30002CD51 /* PanglongKeyboard.app */;
-			productType = "com.apple.product-type.application";
-		};
-		DD7F2CE0264FC5F40002CD51 /* PanglongKeyboardTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DD7F2CF8264FC5F40002CD51 /* Build configuration list for PBXNativeTarget "PanglongKeyboardTests" */;
-			buildPhases = (
-				DD7F2CDD264FC5F40002CD51 /* Sources */,
-				DD7F2CDE264FC5F40002CD51 /* Frameworks */,
-				DD7F2CDF264FC5F40002CD51 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DD7F2CE3264FC5F40002CD51 /* PBXTargetDependency */,
-			);
-			name = PanglongKeyboardTests;
-			productName = PanglongKeyboardTests;
-			productReference = DD7F2CE1264FC5F40002CD51 /* PanglongKeyboardTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		DD7F2CEB264FC5F40002CD51 /* PanglongKeyboardUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DD7F2CFB264FC5F40002CD51 /* Build configuration list for PBXNativeTarget "PanglongKeyboardUITests" */;
-			buildPhases = (
-				DD7F2CE8264FC5F40002CD51 /* Sources */,
-				DD7F2CE9264FC5F40002CD51 /* Frameworks */,
-				DD7F2CEA264FC5F40002CD51 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DD7F2CEE264FC5F40002CD51 /* PBXTargetDependency */,
-			);
-			name = PanglongKeyboardUITests;
-			productName = PanglongKeyboardUITests;
-			productReference = DD7F2CEC264FC5F40002CD51 /* PanglongKeyboardUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		DD7F2D01264FC7A60002CD51 /* Shan */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DD7F2D0A264FC7A60002CD51 /* Build configuration list for PBXNativeTarget "Shan" */;
-			buildPhases = (
-				DD7F2CFE264FC7A60002CD51 /* Sources */,
-				DD7F2CFF264FC7A60002CD51 /* Frameworks */,
-				DD7F2D00264FC7A60002CD51 /* Resources */,
+				DD372ED52664371A008CEBB1 /* Sources */,
+				DD372ED62664371A008CEBB1 /* Frameworks */,
+				DD372ED72664371A008CEBB1 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -331,35 +274,90 @@
 			);
 			name = Shan;
 			productName = Shan;
-			productReference = DD7F2D02264FC7A60002CD51 /* Shan.appex */;
+			productReference = DD372ED92664371A008CEBB1 /* Shan.appex */;
 			productType = "com.apple.product-type.app-extension";
+		};
+		DDA590A0266427D70028A6C9 /* PanglongKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDA590C6266427D80028A6C9 /* Build configuration list for PBXNativeTarget "PanglongKeyboard" */;
+			buildPhases = (
+				DDA5909D266427D70028A6C9 /* Sources */,
+				DDA5909E266427D70028A6C9 /* Frameworks */,
+				DDA5909F266427D70028A6C9 /* Resources */,
+				DD372EE42664371A008CEBB1 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD372EDF2664371A008CEBB1 /* PBXTargetDependency */,
+			);
+			name = PanglongKeyboard;
+			productName = PanglongKeyboard;
+			productReference = DDA590A1266427D70028A6C9 /* PanglongKeyboard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DDA590B1266427D80028A6C9 /* PanglongKeyboardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDA590C9266427D80028A6C9 /* Build configuration list for PBXNativeTarget "PanglongKeyboardTests" */;
+			buildPhases = (
+				DDA590AE266427D80028A6C9 /* Sources */,
+				DDA590AF266427D80028A6C9 /* Frameworks */,
+				DDA590B0266427D80028A6C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDA590B4266427D80028A6C9 /* PBXTargetDependency */,
+			);
+			name = PanglongKeyboardTests;
+			productName = PanglongKeyboardTests;
+			productReference = DDA590B2266427D80028A6C9 /* PanglongKeyboardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DDA590BC266427D80028A6C9 /* PanglongKeyboardUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDA590CC266427D80028A6C9 /* Build configuration list for PBXNativeTarget "PanglongKeyboardUITests" */;
+			buildPhases = (
+				DDA590B9266427D80028A6C9 /* Sources */,
+				DDA590BA266427D80028A6C9 /* Frameworks */,
+				DDA590BB266427D80028A6C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDA590BF266427D80028A6C9 /* PBXTargetDependency */,
+			);
+			name = PanglongKeyboardUITests;
+			productName = PanglongKeyboardUITests;
+			productReference = DDA590BD266427D80028A6C9 /* PanglongKeyboardUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		DD7F2CC3264FC5F30002CD51 /* Project object */ = {
+		DDA59099266427D70028A6C9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
-					DD7F2CCA264FC5F30002CD51 = {
+					DD372ED82664371A008CEBB1 = {
 						CreatedOnToolsVersion = 12.5;
 					};
-					DD7F2CE0264FC5F40002CD51 = {
+					DDA590A0266427D70028A6C9 = {
 						CreatedOnToolsVersion = 12.5;
-						TestTargetID = DD7F2CCA264FC5F30002CD51;
 					};
-					DD7F2CEB264FC5F40002CD51 = {
+					DDA590B1266427D80028A6C9 = {
 						CreatedOnToolsVersion = 12.5;
-						TestTargetID = DD7F2CCA264FC5F30002CD51;
+						TestTargetID = DDA590A0266427D70028A6C9;
 					};
-					DD7F2D01264FC7A60002CD51 = {
+					DDA590BC266427D80028A6C9 = {
 						CreatedOnToolsVersion = 12.5;
+						TestTargetID = DDA590A0266427D70028A6C9;
 					};
 				};
 			};
-			buildConfigurationList = DD7F2CC6264FC5F30002CD51 /* Build configuration list for PBXProject "PanglongKeyboard" */;
+			buildConfigurationList = DDA5909C266427D70028A6C9 /* Build configuration list for PBXProject "PanglongKeyboard" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -367,46 +365,47 @@
 				en,
 				Base,
 			);
-			mainGroup = DD7F2CC2264FC5F30002CD51;
-			productRefGroup = DD7F2CCC264FC5F30002CD51 /* Products */;
+			mainGroup = DDA59098266427D70028A6C9;
+			productRefGroup = DDA590A2266427D70028A6C9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DD7F2CCA264FC5F30002CD51 /* PanglongKeyboard */,
-				DD7F2CE0264FC5F40002CD51 /* PanglongKeyboardTests */,
-				DD7F2CEB264FC5F40002CD51 /* PanglongKeyboardUITests */,
-				DD7F2D01264FC7A60002CD51 /* Shan */,
+				DDA590A0266427D70028A6C9 /* PanglongKeyboard */,
+				DDA590B1266427D80028A6C9 /* PanglongKeyboardTests */,
+				DDA590BC266427D80028A6C9 /* PanglongKeyboardUITests */,
+				DD372ED82664371A008CEBB1 /* Shan */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DD7F2CC9264FC5F30002CD51 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DD2C173B2662CE590029C422 /* Settings.bundle in Resources */,
-				DD7F2CDB264FC5F40002CD51 /* LaunchScreen.storyboard in Resources */,
-				DD7F2CD8264FC5F40002CD51 /* Assets.xcassets in Resources */,
-				DD7F2CD6264FC5F30002CD51 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DD7F2CDF264FC5F40002CD51 /* Resources */ = {
+		DD372ED72664371A008CEBB1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DD7F2CEA264FC5F40002CD51 /* Resources */ = {
+		DDA5909F266427D70028A6C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA590DC266429C60028A6C9 /* Settings.bundle in Resources */,
+				DDA590D4266428B40028A6C9 /* LICENSE.txt in Resources */,
+				DDA590DA266429240028A6C9 /* Assets.xcassets in Resources */,
+				DD372ED4266436C6008CEBB1 /* LaunchScreen.storyboard in Resources */,
+				DDA590AC266427D80028A6C9 /* Preview Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA590B0266427D80028A6C9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DD7F2D00264FC7A60002CD51 /* Resources */ = {
+		DDA590BB266427D80028A6C9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -416,95 +415,113 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DD7F2CC7264FC5F30002CD51 /* Sources */ = {
+		DD372ED52664371A008CEBB1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD2C17312662A4B60029C422 /* AboutViewController.swift in Sources */,
-				DD86DF26265FBEA80036B101 /* LicenseViewController.swift in Sources */,
-				DD7F2CD3264FC5F30002CD51 /* ViewController.swift in Sources */,
-				DD86DF28265FBF4A0036B101 /* SetupKeyboardViewController.swift in Sources */,
-				DD7F2CCF264FC5F30002CD51 /* AppDelegate.swift in Sources */,
-				DD7F2CD1264FC5F30002CD51 /* SceneDelegate.swift in Sources */,
+				DD372F0226643760008CEBB1 /* KeyboardInputTraits.swift in Sources */,
+				DD372F0826643760008CEBB1 /* ImageKey.swift in Sources */,
+				DD372F0426643760008CEBB1 /* KeyboardViewController.swift in Sources */,
+				DD372EFF26643760008CEBB1 /* DefaultKeyboard.swift in Sources */,
+				DD372F0726643760008CEBB1 /* KeyboardConnector.swift in Sources */,
+				DD372F0326643760008CEBB1 /* ForwardingView.swift in Sources */,
+				DD372F0526643760008CEBB1 /* KeyboardLayout.swift in Sources */,
+				DD372EFE26643760008CEBB1 /* DirectionEnum.swift in Sources */,
+				DD372F0626643760008CEBB1 /* KeyboardKey.swift in Sources */,
+				DD372F0026643760008CEBB1 /* KeyboardModel.swift in Sources */,
+				DD372F0926643760008CEBB1 /* KeyboardKeyBackground.swift in Sources */,
+				DD372F0A26643760008CEBB1 /* Shapes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DD7F2CDD264FC5F40002CD51 /* Sources */ = {
+		DDA5909D266427D70028A6C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD7F2CE6264FC5F40002CD51 /* PanglongKeyboardTests.swift in Sources */,
+				DDA590D3266428B40028A6C9 /* LicensePage.swift in Sources */,
+				DDA590A7266427D70028A6C9 /* MainSettingPage.swift in Sources */,
+				DDA590A5266427D70028A6C9 /* PanglongKeyboardApp.swift in Sources */,
+				DDA590D5266428B40028A6C9 /* AddKeyboardPage.swift in Sources */,
+				DDA590D6266428B40028A6C9 /* AboutPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DD7F2CE8264FC5F40002CD51 /* Sources */ = {
+		DDA590AE266427D80028A6C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD7F2CF1264FC5F40002CD51 /* PanglongKeyboardUITests.swift in Sources */,
+				DDA590B7266427D80028A6C9 /* PanglongKeyboardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DD7F2CFE264FC7A60002CD51 /* Sources */ = {
+		DDA590B9266427D80028A6C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD7F2D05264FC7A60002CD51 /* KeyboardViewController.swift in Sources */,
-				DDF7A83E264FCC2200676869 /* DefaultKeyboard.swift in Sources */,
-				DDF7A848264FCC2D00676869 /* KeyboardKey.swift in Sources */,
-				DDF7A83F264FCC2200676869 /* DirectionEnum.swift in Sources */,
-				DDF7A847264FCC2D00676869 /* KeyboardConnector.swift in Sources */,
-				DDF7A838264FCBF700676869 /* ForwardingView.swift in Sources */,
-				DDF7A840264FCC2200676869 /* KeyboardModel.swift in Sources */,
-				DDF7A846264FCC2D00676869 /* ImageKey.swift in Sources */,
-				DDF7A84A264FCC2D00676869 /* KeyboardKeyBackground.swift in Sources */,
-				DDF7A849264FCC2D00676869 /* Shapes.swift in Sources */,
-				DDF7A83A264FCBF700676869 /* KeyboardLayout.swift in Sources */,
-				DDF7A839264FCBF700676869 /* KeyboardInputTraits.swift in Sources */,
+				DDA590C2266427D80028A6C9 /* PanglongKeyboardUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DD7F2CE3264FC5F40002CD51 /* PBXTargetDependency */ = {
+		DD372EDF2664371A008CEBB1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DD7F2CCA264FC5F30002CD51 /* PanglongKeyboard */;
-			targetProxy = DD7F2CE2264FC5F40002CD51 /* PBXContainerItemProxy */;
+			target = DD372ED82664371A008CEBB1 /* Shan */;
+			targetProxy = DD372EDE2664371A008CEBB1 /* PBXContainerItemProxy */;
 		};
-		DD7F2CEE264FC5F40002CD51 /* PBXTargetDependency */ = {
+		DDA590B4266427D80028A6C9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DD7F2CCA264FC5F30002CD51 /* PanglongKeyboard */;
-			targetProxy = DD7F2CED264FC5F40002CD51 /* PBXContainerItemProxy */;
+			target = DDA590A0266427D70028A6C9 /* PanglongKeyboard */;
+			targetProxy = DDA590B3266427D80028A6C9 /* PBXContainerItemProxy */;
 		};
-		DD7F2D08264FC7A60002CD51 /* PBXTargetDependency */ = {
+		DDA590BF266427D80028A6C9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DD7F2D01264FC7A60002CD51 /* Shan */;
-			targetProxy = DD7F2D07264FC7A60002CD51 /* PBXContainerItemProxy */;
+			target = DDA590A0266427D70028A6C9 /* PanglongKeyboard */;
+			targetProxy = DDA590BE266427D80028A6C9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		DD7F2CD4264FC5F30002CD51 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DD7F2CD5264FC5F30002CD51 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		DD7F2CD9264FC5F40002CD51 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DD7F2CDA264FC5F40002CD51 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		DD7F2CF3264FC5F40002CD51 /* Debug */ = {
+		DD372EE22664371A008CEBB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9M4Q67AQA8;
+				INFOPLIST_FILE = "Shan/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.noernova.PanglongKeyboard.Shan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DD372EE32664371A008CEBB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9M4Q67AQA8;
+				INFOPLIST_FILE = "Shan/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.noernova.PanglongKeyboard.Shan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DDA590C4266427D80028A6C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -565,7 +582,7 @@
 			};
 			name = Debug;
 		};
-		DD7F2CF4264FC5F40002CD51 /* Release */ = {
+		DDA590C5266427D80028A6C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -620,47 +637,53 @@
 			};
 			name = Release;
 		};
-		DD7F2CF6264FC5F40002CD51 /* Debug */ = {
+		DDA590C7266427D80028A6C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"PanglongKeyboard/Preview Content\"";
 				DEVELOPMENT_TEAM = 9M4Q67AQA8;
+				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = PanglongKeyboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shan.PanglongKeyboard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.noernova.PanglongKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		DD7F2CF7264FC5F40002CD51 /* Release */ = {
+		DDA590C8266427D80028A6C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"PanglongKeyboard/Preview Content\"";
 				DEVELOPMENT_TEAM = 9M4Q67AQA8;
+				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = PanglongKeyboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shan.PanglongKeyboard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.noernova.PanglongKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		DD7F2CF9264FC5F40002CD51 /* Debug */ = {
+		DDA590CA266427D80028A6C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -668,13 +691,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9M4Q67AQA8;
 				INFOPLIST_FILE = PanglongKeyboardTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shan.PanglongKeyboardTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.noernova.PanglongKeyboardTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -682,7 +705,7 @@
 			};
 			name = Debug;
 		};
-		DD7F2CFA264FC5F40002CD51 /* Release */ = {
+		DDA590CB266427D80028A6C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -690,13 +713,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9M4Q67AQA8;
 				INFOPLIST_FILE = PanglongKeyboardTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shan.PanglongKeyboardTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.noernova.PanglongKeyboardTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -704,7 +727,7 @@
 			};
 			name = Release;
 		};
-		DD7F2CFC264FC5F40002CD51 /* Debug */ = {
+		DDA590CD266427D80028A6C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -716,7 +739,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shan.PanglongKeyboardUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.noernova.PanglongKeyboardUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -724,7 +747,7 @@
 			};
 			name = Debug;
 		};
-		DD7F2CFD264FC5F40002CD51 /* Release */ = {
+		DDA590CE266427D80028A6C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -736,103 +759,63 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shan.PanglongKeyboardUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.noernova.PanglongKeyboardUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = PanglongKeyboard;
-			};
-			name = Release;
-		};
-		DD7F2D0B264FC7A60002CD51 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9M4Q67AQA8;
-				INFOPLIST_FILE = "Shan/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.shan.PanglongKeyboard.Shan;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		DD7F2D0C264FC7A60002CD51 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9M4Q67AQA8;
-				INFOPLIST_FILE = "Shan/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.shan.PanglongKeyboard.Shan;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DD7F2CC6264FC5F30002CD51 /* Build configuration list for PBXProject "PanglongKeyboard" */ = {
+		DD372EE12664371A008CEBB1 /* Build configuration list for PBXNativeTarget "Shan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DD7F2CF3264FC5F40002CD51 /* Debug */,
-				DD7F2CF4264FC5F40002CD51 /* Release */,
+				DD372EE22664371A008CEBB1 /* Debug */,
+				DD372EE32664371A008CEBB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DD7F2CF5264FC5F40002CD51 /* Build configuration list for PBXNativeTarget "PanglongKeyboard" */ = {
+		DDA5909C266427D70028A6C9 /* Build configuration list for PBXProject "PanglongKeyboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DD7F2CF6264FC5F40002CD51 /* Debug */,
-				DD7F2CF7264FC5F40002CD51 /* Release */,
+				DDA590C4266427D80028A6C9 /* Debug */,
+				DDA590C5266427D80028A6C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DD7F2CF8264FC5F40002CD51 /* Build configuration list for PBXNativeTarget "PanglongKeyboardTests" */ = {
+		DDA590C6266427D80028A6C9 /* Build configuration list for PBXNativeTarget "PanglongKeyboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DD7F2CF9264FC5F40002CD51 /* Debug */,
-				DD7F2CFA264FC5F40002CD51 /* Release */,
+				DDA590C7266427D80028A6C9 /* Debug */,
+				DDA590C8266427D80028A6C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DD7F2CFB264FC5F40002CD51 /* Build configuration list for PBXNativeTarget "PanglongKeyboardUITests" */ = {
+		DDA590C9266427D80028A6C9 /* Build configuration list for PBXNativeTarget "PanglongKeyboardTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DD7F2CFC264FC5F40002CD51 /* Debug */,
-				DD7F2CFD264FC5F40002CD51 /* Release */,
+				DDA590CA266427D80028A6C9 /* Debug */,
+				DDA590CB266427D80028A6C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DD7F2D0A264FC7A60002CD51 /* Build configuration list for PBXNativeTarget "Shan" */ = {
+		DDA590CC266427D80028A6C9 /* Build configuration list for PBXNativeTarget "PanglongKeyboardUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DD7F2D0B264FC7A60002CD51 /* Debug */,
-				DD7F2D0C264FC7A60002CD51 /* Release */,
+				DDA590CD266427D80028A6C9 /* Debug */,
+				DDA590CE266427D80028A6C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = DD7F2CC3264FC5F30002CD51 /* Project object */;
+	rootObject = DDA59099266427D70028A6C9 /* Project object */;
 }
