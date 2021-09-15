@@ -2,7 +2,7 @@
 
 ### Unofficial custom "panglong keyboard" layout for **iOS**.
 ---------------------------
-I'm forked this project structure's from [Tasty Imitation Keyboard](https://github.com/archagon/tasty-imitation-keyboard) by archagon, and **modified** several modules to touch and feel like as same as iOS keyboard behavior, the keyboard laytout is base on [Panglong Keyboard](https://github.com/NoerNova/Panglong_Shan_Keyboard_macOS).
+I forked this project from [Tasty Imitation Keyboard](https://github.com/archagon/tasty-imitation-keyboard) by archagon, and **modified** several modules to touch and feel like iOS keyboard behavior as possible as, the keyboard laytout is base on [Panglong Keyboard](https://github.com/NoerNova/Panglong_Shan_Keyboard_macOS).
 
 # Screen Short
 -----
