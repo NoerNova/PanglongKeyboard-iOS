@@ -487,13 +487,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9M4Q67AQA8;
+				DEVELOPMENT_TEAM = 2MBX27488C;
 				INFOPLIST_FILE = "Shan/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.noernova.PanglongKeyboard.Shan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -506,13 +507,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9M4Q67AQA8;
+				DEVELOPMENT_TEAM = 2MBX27488C;
 				INFOPLIST_FILE = "Shan/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.noernova.PanglongKeyboard.Shan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -646,7 +648,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PanglongKeyboard/Preview Content\"";
-				DEVELOPMENT_TEAM = 9M4Q67AQA8;
+				DEVELOPMENT_TEAM = 2MBX27488C;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = PanglongKeyboard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -669,7 +671,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PanglongKeyboard/Preview Content\"";
-				DEVELOPMENT_TEAM = 9M4Q67AQA8;
+				DEVELOPMENT_TEAM = 2MBX27488C;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = PanglongKeyboard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -690,7 +692,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9M4Q67AQA8;
+				DEVELOPMENT_TEAM = 2MBX27488C;
 				INFOPLIST_FILE = PanglongKeyboardTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -712,7 +714,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9M4Q67AQA8;
+				DEVELOPMENT_TEAM = 2MBX27488C;
 				INFOPLIST_FILE = PanglongKeyboardTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -733,7 +735,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9M4Q67AQA8;
+				DEVELOPMENT_TEAM = 2MBX27488C;
 				INFOPLIST_FILE = PanglongKeyboardUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -753,7 +755,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9M4Q67AQA8;
+				DEVELOPMENT_TEAM = 2MBX27488C;
 				INFOPLIST_FILE = PanglongKeyboardUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

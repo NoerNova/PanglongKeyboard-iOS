@@ -68,7 +68,7 @@ func defaultKeyboard(_ needsInputModeSwitchKey: Bool) -> Keyboard {
     // MARK: - Mode 1
     
     // ၹ    ၻ    ꧣ    ႞    ၿ    ြ    ၷ    ႀ    ဝ    ႁ
-    for key in ["ၹ", "ၻ", "ꧣ", "႞", "ၿ", " ြ", "ၷ", "ႀ", "ဝ", "ႁ"] {
+    for key in ["ၹ", "ၻ", "ꧣ", "႞", "ၿ", "ြ", "ၷ", "ႀ", "ဝ", "ႁ"] {
         let keyModel = Key(.character)
         keyModel.setLetter(key)
         defaultKeyboard.add(key: Key(keyModel), row: 0, page: 1)

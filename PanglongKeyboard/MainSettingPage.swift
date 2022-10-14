@@ -56,12 +56,12 @@ struct MainSettingPage: View {
                                 
                                 .foregroundColor(.gray)
                             Spacer()
-                            Text("1.0")
+                            Text("1.1")
                                 .foregroundColor(.gray)
                         }
                         .frame(height: 60)
                     }
-                    Text("Copyright © 2021 Noernova")
+                    Text("Copyright © 2022 Noernova")
                         .frame(maxWidth: .infinity, alignment: .center)
                         .foregroundColor(.gray)
                 }
