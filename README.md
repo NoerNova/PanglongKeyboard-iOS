@@ -1,3 +1,5 @@
+#### Archived and no longer maintained, move to [https://github.com/NoerNova/ShanKeyboard-iOS](https://github.com/NoerNova/ShanKeyboard-iOS), much easier customizing.
+
 # Panglong [Shan](https://en.wikipedia.org/wiki/Shan_people) language Keyboard layout for iOS (Unicode)
 
 ### Unofficial custom "panglong keyboard" layout for **iOS**.
